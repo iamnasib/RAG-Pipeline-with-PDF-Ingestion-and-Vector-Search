@@ -39,5 +39,5 @@ Troubleshooting
 
 - Make sure `pdfs/` and `jsons/` folders exist and have the expected files.
 - If a page's `extract_text()` returns nothing, that page may be an image — try OCR.
-- If the embedding server is unreachable, check that the BGE-M3 server is running at `http://localhost:11434`. (Ollama should be installed and BGE-M# model downloaded)
+- If the embedding server is unreachable, check that the BGE-M3 server is running at `http://localhost:11434`. (Ollama should be installed and BGE-M3 model downloaded)
 - If OpenAI calls fail, verify `OPENAI_API_KEY` and your network access.
