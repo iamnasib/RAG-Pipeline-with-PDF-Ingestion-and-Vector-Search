@@ -1,0 +1,4 @@
+pdfplumber
+requests
+chromadb
+python-dotenv
