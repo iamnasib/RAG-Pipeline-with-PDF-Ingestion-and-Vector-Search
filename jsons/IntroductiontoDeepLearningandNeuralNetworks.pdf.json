@@ -1,0 +1,24 @@
+{
+    "chunks": [
+        {
+            "source": "IntroductiontoDeepLearningandNeuralNetworks.pdf",
+            "page_number": 1,
+            "text": "Introduction to Neural Networks Inspiration from Nature Birds inspired humans to build airplanes. The tiny hooks on burrs sticking to a dog\u2019s fur led to the invention of Velcro. And just like that, nature has always been humanity\u2019s greatest engineer. So, when it came to making machines that could think, learn, and solve problems, where did we look? To the human brain. That\u2019s how neural networks were born \u2014 machines inspired by neurons in our brains, built to recognize patterns, make decisions, and even learn from experience. What is AI, ML, and DL? Before we dive into neural networks, let\u2019s untangle these buzzwords. Term Stands for Think of it as\u2026 AI Artificial Intelligence The big umbrella: making machines \u201csmart\u201d A subset of AI: machines that learn from ML Machine Learning data DL Deep Learning A type of ML: uses neural networks Let\u2019s simplify: \u2022 AI is the dream: \u201cCan we make machines intelligent?\u201d \u2022 ML is the method: \u201cLet\u2019s give machines data and let them learn.\u201d \u2022 DL is the tool: \u201cLet\u2019s use neural networks that learn in layers \u2014 like the brain.\u201d"
+        },
+        {
+            "source": "IntroductiontoDeepLearningandNeuralNetworks.pdf",
+            "page_number": 2,
+            "text": "So, when we talk about neural networks, we\u2019re entering the world of deep learning, which is a part of machine learning, which itself is a part of AI. So, What Are Neural Networks? Imagine a bunch of simple decision-makers called neurons, connected together in layers. Each neuron: \u2022 Takes some input (like a number) \u2022 Applies a little math (weights + bias) \u2022 Passes the result through a rule (called an activation function) \u2022 Sends the output to the next layer By connecting many of these neurons, we get a neural network. And what\u2019s amazing? Even though each neuron is simple, when combined, the network becomes powerful \u2014 like how a bunch of ants can build a complex colony. Why Are Neural Networks Useful? Because they can learn patterns, even when we don\u2019t fully understand the patterns ourselves. Examples: \u2022 Recognize cats in photos \u2022 Convert speech to text \u2022 Translate languages \u2022 Predict stock prices \u2022 Generate art \u2022 Power AI like ChatGPT"
+        },
+        {
+            "source": "IntroductiontoDeepLearningandNeuralNetworks.pdf",
+            "page_number": 3,
+            "text": "Structure of a Neural Network Here\u2019s the basic anatomy of a neural network: Input Layer \u2192 Hidden Layers \u2192 Output Layer (Data) (Neurons doing math) (Prediction) Each layer is just a bunch of neurons working together. The more hidden layers, the \u201cdeeper\u201d the network. Hence: Deep Learning. Wait \u2014 Why Not Use Simple Code Instead? Good question. Sometimes, a simple formula or rule is enough (like area = length \u00d7 width ). But what about: \u2022 Recognizing handwritten digits? \u2022 Understanding language? \u2022 Diagnosing diseases from X-rays? There are no easy formulas for these. Neural networks learn the formula by themselves from lots of examples. How Do Neural Networks Learn? Let\u2019s say the network tries to predict y = x\u00b2 + x . 1. It starts with random guesses (bad predictions) 2. It checks how wrong it is (loss) 3. It adjusts the internal settings (weights) to be a little better 4. Repeat, repeat, repeat\u2026"
+        },
+        {
+            "source": "IntroductiontoDeepLearningandNeuralNetworks.pdf",
+            "page_number": 4,
+            "text": "Over time, the network figures out the relationship between x and y. This process is called training \u2014 and it\u2019s where the magic happens. Are They Really Like the Brain? Kind of \u2014 but very simplified. \u2022 A biological brain neuron connects to 1000s of others \u2022 It processes chemicals, spikes, timings \u2022 It adapts and rewires itself A neural network is a mathematical model \u2014 inspired by the brain, but way simpler. Still, the results are powerful. Summary Concept Meaning AI Making machines act smart ML Letting machines learn from data DL Using multi-layered neural networks to learn complex stuff Neural A network of artificial neurons that learns from data Network"
+        }
+    ]
+}

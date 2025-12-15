@@ -1,0 +1,19 @@
+{
+    "chunks": [
+        {
+            "source": "BinomialDistribution.pdf",
+            "page_number": 1,
+            "text": "What is the Binomial Distribution? The binomial distribution models the number of successes in a fixed number of independent yes/no experiments, where each has the same probability of success. Think of this: \u2022 Toss a coin 10 times \u2022 What\u2019s the probability of getting exactly 6 heads? That\u2019s a binomial problem. Key Ingredients: \u2022 n = number of trials (e.g., 10 tosses) \u2022 p = probability of success (e.g., 0.5 for heads) \u2022 x = number of successes (e.g., 6 heads) Plain Text Formula: P(X = x) = C(n, x) \u00d7 p^x \u00d7 (1 - p)^(n - x) Where: \u2022 C(n, x) is \u201cn choose x\u201d = combinations = number of ways to pick x successes out of n \u2022 p^x is the probability of x successes \u2022 (1 - p)^(n - x) is the probability of the remaining being failures"
+        },
+        {
+            "source": "BinomialDistribution.pdf",
+            "page_number": 2,
+            "text": "Example: 10 coin tosses, what\u2019s the probability of exactly 6 heads? \u2022 n = 10 \u2022 x = 6 \u2022 p = 0.5 6 4 P(6heads) = C(10, 6) * 0.5 * 0.5 = 210 * (0.015625) * (0.0625) \u2248 0.205 So there\u2019s a ~20.5% chance you\u2019ll get exactly 6 heads in 10 tosses. In Python: from scipy.stats import binom # Probability of exactly 6 heads in 10 tosses (p = 0.5) prob = binom.pmf(k=6, n=10, p=0.5) print(prob) # Output: ~0.205 When to Use: \u2022 Email campaign: Will 40 out of 100 people click the link? \u2022 Quality check: How many out of 10 products will be defective? \u2022 A/B testing: Will 60 out of 200 visitors convert? Summary: Concept Value Type Discrete"
+        },
+        {
+            "source": "BinomialDistribution.pdf",
+            "page_number": 3,
+            "text": "Concept Value Formula P(X = x) = C(n, x) * p^x * (1 - p)^(n - x) Python scipy.stats.binom.pmf(x, n, p) Used for Count of successes in repeated trials Want to try a real-world binomial example next? Or move to the most famous one \u2014 the normal distribution?"
+        }
+    ]
+}

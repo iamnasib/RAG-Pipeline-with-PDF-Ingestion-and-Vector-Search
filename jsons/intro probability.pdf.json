@@ -1,0 +1,19 @@
+{
+    "chunks": [
+        {
+            "source": "intro probability.pdf",
+            "page_number": 1,
+            "text": "Introduction to Probability in Data Science 1. What is Probability? Probability is a measure of the likelihood that a particular event will occur. It ranges from 0 (impossible) to 1 (certain). Probability is used to model uncertanity with data and make informed decisions based on that uncertainty. Examples: \u2022 Tossing a coin \u2022 Rolling a die \u2022 Predicting customer churn 2. Role of Probability in Data Science Probability forms the foundation of statistical inference, machine learning, and decision-making under uncertainty. Data scientists use it to: \u2022 Estimate unknown values from sample data \u2022 Evaluate risks and uncertainties \u2022 Make predictions using probabilistic models"
+        },
+        {
+            "source": "intro probability.pdf",
+            "page_number": 2,
+            "text": "3. Types of Probability Theoretical Probability Based on known possible outcomes. \u2022 Example: Probability of getting heads in a fair coin = 0.5 Empirical (Experimental) Probability Based on observed data. \u2022 Example: Probability that a user clicks an ad based on 10,000 past impressions. 4. Key Concepts \u2022 Sample Space (S): All possible outcomes of an experiment. \u2022 Event (E): A subset of the sample space; one or more outcomes. Example: For rolling a die: \u2022 Sample space: {1, 2, 3, 4, 5, 6} \u2022 Event (even number): {2, 4, 6} 5. Real-World Business Scenarios \u2022 Predicting customer conversion rate from a marketing campaign \u2022 Estimating product failure rate in manufacturing \u2022 Calculating insurance risks \u2022 Detecting fraud in financial transactions"
+        },
+        {
+            "source": "intro probability.pdf",
+            "page_number": 3,
+            "text": "Calculating Probability Formula: P(E) = Number of favorable outcomes / Total number of outcomes Where: \u2022 P(E) is the probability of event E \u2022 Number of favorable outcomes is the count of outcomes that satisfy event E \u2022 Total number of outcomes is the count of all possible outcomes in the sample space Example: If you roll a die, the probability of rolling a 3 is: P(rolling a 3) = Number of favorable outcomes (1) / Total number of outcomes (6) = 1/6 \u2248 0.1667 Quick Quiz 1. What is the probability of rolling a 5 on a fair six-sided die? 2. Two fair six-sided dice are rolled. What is the probability that at least one of the dice shows a 4? Homework / Practice 1. List three real-world problems in Data Science where probability is involved. 2. Identify the sample space and possible events for each. 3. Try calculating a simple empirical probability using past data (if available)."
+        }
+    ]
+}

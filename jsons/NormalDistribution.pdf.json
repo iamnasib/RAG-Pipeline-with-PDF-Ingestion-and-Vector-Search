@@ -1,0 +1,24 @@
+{
+    "chunks": [
+        {
+            "source": "NormalDistribution.pdf",
+            "page_number": 1,
+            "text": "Normal Distribution (a.k.a. Gaussian Distribution) Before we dive into the details, let\u2019s understand two key concepts related to normal distribution, mean, and standard deviation. 1. What is Mean? The mean (or average) of a dataset is the sum of all values divided by the number of values. Formula: mean = (x1 + x2 + x3 + \u2026 + xn) / n It represents the central value of the data. 2. What is Standard Deviation? The standard deviation measures how spread out the numbers are from the mean. Steps to calculate standard deviation: 1. Find the mean 2. Subtract the mean from each value and square the result 3. Take the average of these squared differences (this is the variance) 4. Take the square root of the variance Formula: standard deviation (sigma) = sqrt( (1/n) * sum((xi - mean)^2) ) A smaller standard deviation means the data points are close to the mean. A larger standard deviation means the data is more spread out."
+        },
+        {
+            "source": "NormalDistribution.pdf",
+            "page_number": 2,
+            "text": "What is Normal Distribution? A normal distribution is a continuous probability distribution that is bell- shaped and symmetric around the mean. It describes variables where: \u2022 Most values cluster around the average (mean). \u2022 Extreme values (very high or low) are rare. Think of: \u2022 Heights of people \u2022 Test scores \u2022 Measurement errors All tend to follow a normal curve. Key Properties: \u2022 Mean (\u03bc): Center of the distribution \u2022 Standard Deviation (\u03c3): Spread of the distribution Shape of the Curve: \u2022 Bell-shaped \u2022 Symmetrical \u2022 Peaks at the mean \u2022 About 68% of the data lies within \u00b11\u03c3, 95% within \u00b12\u03c3, 99.7% within \u00b13\u03c3 \u2192 This is the famous 68\u201395\u201399.7 Rule"
+        },
+        {
+            "source": "NormalDistribution.pdf",
+            "page_number": 3,
+            "text": "Formula (Plain Text): f(x) = (1 / (\u03c3 * sqrt(2\u03c0))) * e^(-(x - \u03bc)\u00b2 / (2\u03c3\u00b2)) Where: \u2022 \u03bc = mean \u2022 \u03c3 = standard deviation \u2022 e = Euler\u2019s number (\u2248 2.718) \u2022 \u03c0 = pi (\u2248 3.14159) This gives the probability density for a given value x . You don\u2019t need to memorize this formula \u2014 but understanding its shape and behavior is essential. In Python: import numpy as np import matplotlib.pyplot as plt from scipy.stats import norm # Generate values x = np.linspace(-4, 4, 1000) mean = 0 std_dev = 1 # Get the probability density y = norm.pdf(x, loc=mean, scale=std_dev) # Plot plt.plot(x, y) plt.title(\"Standard Normal Distribution (\u03bc=0, \u03c3=1)\") plt.xlabel(\"x\") plt.ylabel(\"Probability Density\")"
+        },
+        {
+            "source": "NormalDistribution.pdf",
+            "page_number": 4,
+            "text": "plt.grid(True) plt.show() Summary Property Value Type Continuous Shape Bell curve Key parameters Mean (\u03bc), Std. Dev (\u03c3) Formula f(x) = (1 / (\u03c3\u221a2\u03c0)) * e^(-(x - \u03bc)\u00b2 / 2\u03c3\u00b2) Python scipy.stats.norm.pdf(x, \u03bc, \u03c3)"
+        }
+    ]
+}

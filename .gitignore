@@ -1,0 +1,8 @@
+.env
+chroma_db/chroma.sqlite3
+chroma_db/ca46c280-2056-4e1f-adab-b571b02d55c0/data_level0.bin
+chroma_db/ca46c280-2056-4e1f-adab-b571b02d55c0/header.bin
+chroma_db/ca46c280-2056-4e1f-adab-b571b02d55c0/length.bin
+chroma_db/ca46c280-2056-4e1f-adab-b571b02d55c0/link_lists.bin
+
+pdfs/*.pdf

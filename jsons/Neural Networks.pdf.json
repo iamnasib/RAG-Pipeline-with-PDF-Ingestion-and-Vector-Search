@@ -1,0 +1,114 @@
+{
+    "chunks": [
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 1,
+            "text": "Introduction to Neural Networks Inspiration from Nature Birds inspired humans to build airplanes. The tiny hooks on burrs sticking to a dog\u2019s fur led to the invention of Velcro. And just like that, nature has always been humanity\u2019s greatest engineer. So, when it came to making machines that could think, learn, and solve problems, where did we look? To the human brain. That\u2019s how neural networks were born \u2014 machines inspired by neurons in our brains, built to recognize patterns, make decisions, and even learn from experience. What is AI, ML, and DL? Before we dive into neural networks, let\u2019s untangle these buzzwords. Term Stands for Think of it as\u2026 AI Artificial Intelligence The big umbrella: making machines \u201csmart\u201d A subset of AI: machines that learn from ML Machine Learning data DL Deep Learning A type of ML: uses neural networks Let\u2019s simplify: \u2022 AI is the dream: \u201cCan we make machines intelligent?\u201d \u2022 ML is the method: \u201cLet\u2019s give machines data and let them learn.\u201d \u2022 DL is the tool: \u201cLet\u2019s use neural networks that learn in layers \u2014 like the brain.\u201d"
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 2,
+            "text": "So, when we talk about neural networks, we\u2019re entering the world of deep learning, which is a part of machine learning, which itself is a part of AI. So, What Are Neural Networks? Imagine a bunch of simple decision-makers called neurons, connected together in layers. Each neuron: \u2022 Takes some input (like a number) \u2022 Applies a little math (weights + bias) \u2022 Passes the result through a rule (called an activation function) \u2022 Sends the output to the next layer By connecting many of these neurons, we get a neural network. And what\u2019s amazing? Even though each neuron is simple, when combined, the network becomes powerful \u2014 like how a bunch of ants can build a complex colony. Why Are Neural Networks Useful? Because they can learn patterns, even when we don\u2019t fully understand the patterns ourselves. Examples: \u2022 Recognize cats in photos \u2022 Convert speech to text \u2022 Translate languages \u2022 Predict stock prices \u2022 Generate art \u2022 Power AI like ChatGPT"
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 3,
+            "text": "Structure of a Neural Network Here\u2019s the basic anatomy of a neural network: Input Layer \u2192 Hidden Layers \u2192 Output Layer (Data) (Neurons doing math) (Prediction) Each layer is just a bunch of neurons working together. The more hidden layers, the \u201cdeeper\u201d the network. Hence: Deep Learning. Wait \u2014 Why Not Use Simple Code Instead? Good question. Sometimes, a simple formula or rule is enough (like area = length \u00d7 width ). But what about: \u2022 Recognizing handwritten digits? \u2022 Understanding language? \u2022 Diagnosing diseases from X-rays? There are no easy formulas for these. Neural networks learn the formula by themselves from lots of examples. How Do Neural Networks Learn? Let\u2019s say the network tries to predict y = x\u00b2 + x . 1. It starts with random guesses (bad predictions) 2. It checks how wrong it is (loss) 3. It adjusts the internal settings (weights) to be a little better 4. Repeat, repeat, repeat\u2026"
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 4,
+            "text": "Over time, the network figures out the relationship between x and y. This process is called training \u2014 and it\u2019s where the magic happens. Are They Really Like the Brain? Kind of \u2014 but very simplified. \u2022 A biological brain neuron connects to 1000s of others \u2022 It processes chemicals, spikes, timings \u2022 It adapts and rewires itself A neural network is a mathematical model \u2014 inspired by the brain, but way simpler. Still, the results are powerful. Summary Concept Meaning AI Making machines act smart ML Letting machines learn from data DL Using multi-layered neural networks to learn complex stuff Neural A network of artificial neurons that learns from data Network"
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 5,
+            "text": "Perceptron \u2013 The Simplest Neural Network What is a Perceptron? The perceptron is the basic building block of a neural network. It\u2019s a simple computational model that takes several inputs, applies weights to them, adds a bias, and produces an output. It\u2019s essentially a decision-making unit. Real-life Analogy Imagine you\u2019re trying to decide whether to go outside based on: \u2022 Is it sunny? \u2022 Is it the weekend? \u2022 Are you free today? You assign importance (weights) to each factor: \u2022 Sunny: 0.6 \u2022 Weekend: 0.3 \u2022 Free: 0.8 You combine these factors to make a decision: Go or Not Go. This is what a perceptron does."
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 6,
+            "text": "Perceptron Formula A perceptron takes inputs (x1, x2, \u2026, xn), multiplies each by its corresponding weight (w1, w2, \u2026, wn), adds a bias (b), and passes the result through an activation function. y = f(w1x1 + w2x2 + \u2026 + wn*xn + b) Where: \u2022 xi: input features \u2022 wi: weights \u2022 b: bias \u2022 f: activation function (e.g., step function) Step-by-step Example: Binary Classification Let\u2019s say we want a perceptron to learn this simple table: Input (x1, x2) Output (y) (0, 0) 0 (0, 1) 0 (1, 0) 0 (1, 1) 1 This is the behavior of a logical AND gate. We will use: \u2022 Inputs: x1, x2 \u2022 Weights: w1, w2 \u2022 Bias: b \u2022 Activation Function: Step function Step function:"
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 7,
+            "text": "def step(x): return 1 if x >= 0 else 0 Code: Simple Perceptron from Scratch def step(x): return 1 if x >= 0 else 0 def perceptron(x1, x2, w1, w2, b): z = x1 * w1 + x2 * w2 + b return step(z) # Try different weights and bias to match the AND logic print(perceptron(0, 0, 1, 1, -1.5)) # Expected: 0 print(perceptron(0, 1, 1, 1, -1.5)) # Expected: 0 print(perceptron(1, 0, 1, 1, -1.5)) # Expected: 0 print(perceptron(1, 1, 1, 1, -1.5)) # Expected: 1 This matches the AND logic perfectly. Summary \u2022 A perceptron is the simplest form of a neural network. \u2022 It performs a weighted sum of inputs, adds a bias, and passes the result through an activation function to make a decision. \u2022 It can model simple binary functions like AND, OR, etc."
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 8,
+            "text": "Common Terms in Deep Learning Before diving into neural networks, let\u2019s clarify some common terms you\u2019ll encounter: Perceptron A perceptron is the simplest type of neural network \u2014 just one neuron. It takes inputs, multiplies them by weights, adds a bias, and applies an activation function to make a decision (e.g., classify 0 or 1). Neural Network A neural network is a collection of interconnected layers of perceptrons (neurons). Each layer transforms its inputs using weights, biases, and activation functions. Deep neural networks have multiple hidden layers and can model complex patterns. Hyperparameters These are settings we configure before training a model. They are not learned from the data. Examples include: \u2022 Learning rate: How much to adjust weights during training \u2022 Number of epochs: How many times the model sees the entire training dataset \u2022 Batch size: How many samples to process before updating weights"
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 9,
+            "text": "\u2022 Number of layers or neurons: How many neurons are in each layer of the network Learning Rate (\u03b7) This controls how much we adjust the weights after each training step. A learning rate that\u2019s too high may overshoot the solution; too low may make training very slow. Training This is the process where the model learns patterns from data by updating weights based on errors between predicted and actual outputs. Backpropagation Backpropagation is the algorithm used to update weights in a neural network. It calculates the gradient of the loss function with respect to each weight by applying the chain rule, allowing the model to learn from its mistakes. Inference Inference is when the trained model is used to make predictions on new, unseen data."
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 10,
+            "text": "Activation Function This function adds non-linearity to the output of neurons, helping networks model complex patterns. Common activation functions: \u2022 ReLU : Rectified Linear Unit \u2022 Sigmoid : squashes output between 0 and 1 \u2022 Tanh : squashes output between -1 and 1 Perceptrons typically use a step function as the activation, but modern neural nets often use ReLU . Epoch One epoch means one full pass over the entire training dataset. Multiple epochs are used so the model can keep refining its understanding."
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 11,
+            "text": "Training a Perceptron with scikit-learn 1. Import Libraries from sklearn.linear_model import Perceptron from sklearn.datasets import make_classification from sklearn.model_selection import train_test_split 2. Create and Split Data X, y = make_classification(n_samples=1000, n_features=10, n_classes=2, random_state=42) X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42) 3. Initialize the Perceptron clf = Perceptron( max_iter=1000, # Maximum number of epochs eta0=0.1, # Learning rate random_state=42, # For reproducibility tol=1e-3, # Stop early if improvement is smaller than this shuffle=True # Shuffle data each epoch )"
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 12,
+            "text": "4. Train the Model clf.fit(X_train, y_train) Under the hood, this performs the following steps: \u2022 Loops through the data up to max_iter times (epochs) \u2022 Computes predictions \u2022 If a prediction is wrong, updates weights 5. Evaluate the Model accuracy = clf.score(X_test, y_test) print(f\"Accuracy: {accuracy:.2f}\") Important Hyperparameters Recap: Hyperparameter Description max_iter Number of epochs (passes over training data) eta0 Learning rate tol Tolerance for stopping early shuffle Whether to shuffle data between epochs random_state Seed for reproducibility"
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 13,
+            "text": "TensorFlow vs Keras vs PyTorch Deep learning has transformed industries\u2014from self-driving cars to language models like ChatGPT. But behind the scenes, there are powerful libraries that make all of this possible: TensorFlow, Keras, and PyTorch. Today, we\u2019ll explore: \u2022 Why and how each library was created \u2022 How they differ in philosophy and design \u2022 What a \u201cbackend\u201d means in Keras \u2022 Which one might be right for you A Brief History 1. TensorFlow \u2022 Released: 2015 by Google Brain \u2022 Language: Python (but has C++ core) \u2022 Goal: Provide an efficient, production-ready, and scalable library for deep learning. \u2022 TensorFlow is a computational graph framework, meaning it represents computations as nodes in a graph. \u2022 Open sourced in 2015, TensorFlow quickly became the go-to library for many companies and researchers. Fun Fact: TensorFlow was a spiritual successor to Google\u2019s earlier tool called DistBelief. 2. Keras \u2022 Released: 2015 by Fran\u00e7ois Chollet"
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 14,
+            "text": "\u2022 Goal: Make deep learning simple, intuitive, and user-friendly. \u2022 Keras was originally just a high-level wrapper over Theano and TensorFlow, making it easier to build models with fewer lines of code. \u2022 Keras introduced the idea of writing deep learning models like stacking Lego blocks. Keras was not a full deep learning engine\u2014it needed a \u201cbackend\u201d to actually do the math 3. PyTorch \u2022 Released: 2016 by Facebook AI Research (FAIR) \u2022 Language: Python-first, with a strong integration to NumPy \u2022 Goal: Make deep learning flexible, dynamic, and easier for research. \u2022 PyTorch uses dynamic computation graphs, meaning the graph is built on the fly, allowing for more intuitive debugging and flexibility. PyTorch gained massive popularity in academia and research because of its Pythonic nature and simplicity. In a nut shell\u2026 Feature TensorFlow Keras PyTorch Fran\u00e7ois Developed Google Chollet Facebook (Meta) By (Google) Low-level (with Low-level & high- High-level Level some high-level level only APIs) Computation Static (TensorFlow Depends on Dynamic Graph 1.x), Hybrid (2.x) backend Ease of Use Very high High"
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 15,
+            "text": "Feature TensorFlow Keras PyTorch Medium (Better in 2.x) Harder (in 1.x), Debugging Easy Very easy (Pythonic) Easier in 2.x Yes (via Production- Yes TensorFlow Gaining ground ready backend) Research Moderate Moderate Very high usage What Is a \u201cBackend\u201d in Keras? Keras itself doesn\u2019t perform computations like matrix multiplications or gradient descent. It\u2019s more like a user interface or a frontend. It delegates the heavy lifting to a backend engine. Supported Backends Over Time: \u2022 Theano (now discontinued) \u2022 TensorFlow (default backend now) \u2022 CNTK (Microsoft, also discontinued) \u2022 PlaidML (experimental support) You can think of Keras as the steering wheel, while TensorFlow or Theano was the engine under the hood. In TensorFlow 2.0 and later, Keras is fully integrated as tf.keras , eliminating the need to manage separate backends."
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 16,
+            "text": "TensorFlow vs PyTorch: The Real Battle Area TensorFlow PyTorch Ease of TensorFlow Serving, TFX, TorchServe, ONNX, some Deployment TensorFlow Lite catching up Mobile Excellent (TF Lite, TF.js) Improving but limited Support Dynamic TF 1.x: No, TF 2.x: Yes (via Native support Graphs Autograph) Community Large, especially in production Massive in academia Also strong, especially for Performance Highly optimized GPUs Which One Should You Learn First? \u2022 Beginner? \u2192 Start with Keras via TensorFlow 2.x ( tf.keras ). It\u2019s simple and production-ready. \u2022 Researcher or experimenting a lot? \u2192 Use PyTorch. \u2022 Looking for deployment & scalability? \u2192 TensorFlow is very robust."
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 17,
+            "text": "Installing TensorFlow 2.0 Today we will install TensorFlow 2.0, which is a powerful library for machine learning and deep learning tasks. TensorFlow 2.0 simplifies the process of building and training models, making it more user-friendly compared to its predecessor."
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 18,
+            "text": "Understanding and Visualizing the MNIST Dataset with TensorFlow The MNIST dataset is like the \u201cHello World\u201d of deep learning. It contains 70,000 grayscale images of handwritten digits (0\u20139), each of size 28x28 pixels. Before we train a neural network, it\u2019s important to understand what we\u2019re working with. Today we\u2019ll: \u2022 Load the MNIST dataset using TensorFlow \u2022 Visualize a few digit samples \u2022 Understand the data format Step 1: Load the Dataset TensorFlow provides a built-in method to load MNIST, so no extra setup is needed. import tensorflow as tf import matplotlib.pyplot as plt # Load dataset (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data() # Check the shape print(\"Training data shape:\", x_train.shape) print(\"Training labels shape:\", y_train.shape) Output:"
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 19,
+            "text": "Training data shape: (60000, 28, 28) Training labels shape: (60000,) \u2022 We have 60,000 training images and 10,000 test images. \u2022 Each image is 28x28 pixels. \u2022 Each label is a number from 0 to 9. Step 2: Visualize Sample Digits Let\u2019s look at a few images to get a feel for the dataset: # Plot first 10 images with their labels plt.figure(figsize=(10, 2)) for i in range(10): plt.subplot(1, 10, i + 1) plt.imshow(x_train[i], cmap=\"gray\") plt.axis(\"off\") plt.title(str(y_train[i])) plt.tight_layout() plt.show() This will display the first 10 handwritten digits with their corresponding labels above them. What You Should Notice \u2022 The digits vary in writing style, which makes this dataset great for teaching computers to generalize. \u2022 All images are normalized 28x28 grayscale\u2014no color channels. \u2022 The label is not embedded in the image; it\u2019s provided separately."
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 20,
+            "text": "Your First Neural Network TensorFlow is an open-source deep learning library developed by Google. It\u2019s widely used in industry and academia for building and training machine learning models. TensorFlow 2.0 brought significant improvements in ease of use, especially with eager execution and tight integration with Keras. In this tutorial, we\u2019ll create a simple neural network that learns to classify handwritten digits using the MNIST dataset. This dataset contains 28x28 grayscale images of digits from 0 to 9. Key Features of TensorFlow 2.0 \u2022 Eager execution by default (no more complex session graphs!) \u2022 Keras as the official high-level API ( tf.keras ) \u2022 Better debugging and simplicity \u2022 Great for both beginners and professionals What is a Neural Network? A neural network is a collection of layers that learn to map input data to outputs. Think of layers as filters that extract meaningful patterns. Each layer applies transformations using weights and activation functions. Installation pip install tensorflow"
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 21,
+            "text": "Importing Required Libraries import tensorflow as tf from tensorflow.keras.models import Sequential from tensorflow.keras.layers import Dense, Flatten from tensorflow.keras.datasets import mnist from tensorflow.keras.utils import to_categorical Loading and Preparing the Data # Load the data (x_train, y_train), (x_test, y_test) = mnist.load_data() # Normalize the input data x_train = x_train / 255.0 x_test = x_test / 255.0 # One-hot encode the labels y_train = to_categorical(y_train, 10) y_test = to_categorical(y_test, 10) Building a Simple Neural Network model = Sequential([ Flatten(input_shape=(28, 28)), # 28x28 images to 784 input features Dense(128, activation='relu'), # Hidden layer with 128 neurons Dense(10, activation='softmax') # Output layer for 10 classes ])"
+        },
+        {
+            "source": "Neural Networks.pdf",
+            "page_number": 22,
+            "text": "Compiling the Model model.compile( optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'] ) Training the Model model.fit(x_train, y_train, epochs=5, batch_size=32) Evaluating the Model test_loss, test_acc = model.evaluate(x_test, y_test) print(f\"Test accuracy: {test_acc:.4f}\")"
+        }
+    ]
+}

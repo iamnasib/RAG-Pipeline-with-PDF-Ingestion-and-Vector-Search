@@ -1,0 +1,19 @@
+{
+    "chunks": [
+        {
+            "source": "ProbabilityDistributions.pdf",
+            "page_number": 1,
+            "text": "Probability Distributions What is a Probability Distribution? Imagine you\u2019re analyzing real-world data \u2014 sales, weather, clicks, heights, etc. You\u2019ll notice: \u2022 Some values are more likely than others. \u2022 There\u2019s a pattern to how data is spread. That pattern is described by a probability distribution. In short: A probability distribution tells you how likely different outcomes are. What is a Probability Distribution? A probability distribution is a mathematical function or table that: \u2022 Assigns probabilities to all possible outcomes of a random process. There are two types: 1. Discrete Probability Distribution \u2022 For outcomes you can count (e.g. number of heads in 3 coin tosses). \u2022 Example: Binomial Distribution Think: \u201cWhat\u2019s the probability I get exactly 2 heads in 3 coin tosses?\u201d"
+        },
+        {
+            "source": "ProbabilityDistributions.pdf",
+            "page_number": 2,
+            "text": "2. Continuous Probability Distribution \u2022 For outcomes that can be any number in a range (e.g. height, weight). \u2022 Example: Normal Distribution Think: \u201cWhat\u2019s the probability someone\u2019s height is between 165 cm and 170 cm?\u201d A Simple Analogy Let\u2019s say you roll a die: \u2022 Outcomes = {1, 2, 3, 4, 5, 6} \u2022 Each has a probability of 1/6 This is a uniform distribution (discrete). Now imagine measuring people\u2019s heights: \u2022 You don\u2019t get fixed values. \u2022 Instead, you get a curve \u2014 most people around average height, fewer very short or very tall. That\u2019s a normal distribution (continuous). Why Are Distributions Useful in Data Science? 1. Model real-world randomness (user behavior, errors, arrivals, etc.) 2. Make predictions (how likely is a customer to buy?) 3. Run simulations (A/B testing, Monte Carlo) 4. Assume underlying patterns (e.g., linear regression assumes errors are normally distributed)"
+        },
+        {
+            "source": "ProbabilityDistributions.pdf",
+            "page_number": 3,
+            "text": "Summary: Type Example Used For Discrete Binomial, Poisson Count of events Continuous Normal, Uniform Measuring quantities"
+        }
+    ]
+}

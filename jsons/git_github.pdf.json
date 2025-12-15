@@ -1,0 +1,169 @@
+{
+    "chunks": [
+        {
+            "source": "git_github.pdf",
+            "page_number": 1,
+            "text": "Introduction to Version Control & Git What is Version Control? Definition: Version control is a system that records changes to files over time so you can recall specific versions later. It\u2019s like a time machine for your code. Why use it? \u2022 Tracks changes over time. \u2022 Restores older versions when something breaks. \u2022 Allows multiple people to work on the same project. \u2022 Helps experiment safely. The problem without version control: index.html index_final.html index_final_final.html index_final_v2_really_final.html This is messy, error-prone, and hard to manage. Centralized vs Distributed Version Control \u2022 Centralized (CVCS) \u2013 e.g., SVN \u2022 One central server stores the code. \u2022 If the server goes down, no one can commit changes. C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 2,
+            "text": "\u2022 Distributed (DVCS) \u2013 e.g., Git \u2022 Every developer has a complete copy of the repository. \u2022 You can commit changes offline. \u2022 More robust against server failures. What is Git? \u2022 Git is a distributed version control system created by Linus Torvalds (the creator of Linux) in 2005. \u2022 Git tracks changes in your files, especially source code. \u2022 Works locally first and then syncs with remote repositories. Git vs GitHub \u2022 Git \u2192 The tool that manages your code history (installed on your computer). \u2022 GitHub \u2192 A hosting service for Git repositories (like Google Drive for your Git projects). Also alternatives: GitLab, Bitbucket. Installing Git Windows 1. Go to https://git-scm.com/. 2. Download the installer. 3. Follow the prompts (use default settings if unsure). macOS brew install git C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 3,
+            "text": "Linux (Debian/Ubuntu) sudo apt update sudo apt install git Configuring Git Run these commands in your terminal after installing Git: git config --global user.name \"Your Name\" git config --global user.email \"you@example.com\" git config --global core.editor \"code --wait\" # optional, sets VS Code as editor To check your config: git config --list Git Workflow Basics Git has three key areas: 1. Working Directory \u2013 Where you edit files. 2. Staging Area \u2013 Where you prepare files for committing. 3. Repository \u2013 Where committed changes are stored permanently. Basic flow: Edit files \u2192 git add \u2192 git commit C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 4,
+            "text": "First Git Commands Let\u2019s try: mkdir my-first-git-project cd my-first-git-project git init Output: Initialized empty Git repository in ... You\u2019ve just created your first local Git repository. Mini Exercise 1. Install Git on your system. 2. Configure your name and email. 3. Create a folder named my-first-repo . 4. Initialize it with git init . 5. Run git status and see what it says. C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 5,
+            "text": "First Steps with Git Creating a Repository There are two ways to start working with Git: 1. Starting from scratch mkdir my-first-repo cd my-first-repo git init You\u2019ll see: Initialized empty Git repository in /path/to/my-first-repo/.git/ This .git folder is the brain of your repository \u2014 it stores the entire history of your project. 2. Cloning an existing repository git clone https://github.com/user/repo.git This downloads the entire project with history from a remote server like GitHub. Adding Files Let\u2019s create a file: C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 6,
+            "text": "echo \"Hello Git!\" > hello.txt Check what Git sees: git status You\u2019ll see: Untracked files: hello.txt Untracked means Git sees the file but hasn\u2019t started tracking it. Staging Changes To start tracking the file: git add hello.txt To stage everything at once: git add . At this point, the file is staged \u2014 ready to be saved into history. Committing Changes A commit is like taking a snapshot of your project: git commit -m \"Add hello.txt with a greeting\" C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 7,
+            "text": "Commit messages should describe why the change was made, not just what changed. Viewing History To see the commit history: git log For a shorter, cleaner view: git log --oneline Example: a1b2c3d Add hello.txt with a greeting Understanding the Git Workflow Files in Git move through three main states: 1. Untracked \u2013 not being tracked yet. 2. Staged \u2013 ready to be committed. 3. Committed \u2013 saved permanently in the Git history. Basic flow: Working Directory \u2192 git add \u2192 Staging Area \u2192 git commit \u2192 Repository C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 8,
+            "text": "Making Further Changes Edit the file: echo \"This is my first change\" >> hello.txt Check the status: git status You\u2019ll see it\u2019s \u201cmodified.\u201d Stage and commit: git add hello.txt git commit -m \"Update hello.txt with a new line\" Quick Command Recap git init # start a new repository git clone <url> # copy a repository git status # check file states git add <file> # stage changes git commit -m \"msg\" # save staged changes git log --oneline # view history in short form Practice Challenge 1. Create a folder git-practice . 2. Initialize it as a Git repo. 3. Add a file notes.txt with some text. 4. Stage and commit it with a clear message. C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 9,
+            "text": "5. Modify notes.txt and commit the change. 6. Run git log --oneline to see your commits. C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 10,
+            "text": "Tracking & Managing Changes Checking Status The most important diagnostic command in Git: git status This tells you: \u2022 Which branch you\u2019re on \u2022 What files are modified \u2022 What files are staged \u2022 What files are untracked Status States # Untracked (new file) Untracked files: newfile.txt # Modified (changed but not staged) Changes not staged for commit: modified: existing.txt # Staged (ready to commit) Changes to be committed: new file: newfile.txt modified: existing.txt C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 11,
+            "text": "Viewing Changes See Unstaged Changes git diff Shows what you\u2019ve changed but haven\u2019t staged yet. See Staged Changes git diff --staged Shows what will go into your next commit. See Changes Between Commits git diff HEAD~1 HEAD Compares the last commit with the current one. Undoing Changes Git provides several ways to undo changes depending on where they are: 1. Discard Working Directory Changes To restore a file to its last committed state: git restore file.txt Or for all files: git restore . C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 12,
+            "text": "Warning: This permanently discards uncommitted changes! 2. Unstage Files To remove files from staging area but keep changes: git restore --staged file.txt Or the older syntax: git reset HEAD file.txt 3. Amend the Last Commit Forgot to include a file or want to change the commit message? # Stage the forgotten file git add forgotten.txt # Amend the previous commit git commit --amend -m \"New commit message\" 4. Reset to a Previous Commit Soft Reset (keeps changes in staging): git reset --soft HEAD~1 Mixed Reset (keeps changes in working directory): git reset HEAD~1 Hard Reset (discards all changes): C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 13,
+            "text": "git reset --hard HEAD~1 Warning: --hard permanently deletes uncommitted work! Ignoring Files Not all files should be tracked by Git (e.g., passwords, compiled files, system files). Creating .gitignore Create a .gitignore file in your repository root: touch .gitignore Common .gitignore Patterns # Ignore specific files secret.txt config.env # Ignore file types *.log *.tmp *.cache # Ignore directories node_modules/ build/ dist/ # Ignore files in any directory **/*.bak C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 14,
+            "text": "# Exception: Track this file even if ignored !important.log Global .gitignore Set up a global ignore file for all repositories: git config --global core.excludesfile ~/.gitignore_global Common .gitignore Templates For Node.js projects: node_modules/ npm-debug.log .env dist/ *.log For Python projects: __pycache__/ *.py[cod] *$py.class venv/ .env *.egg-info/ For IDE/Editor files: .vscode/ .idea/ *.swp .DS_Store Thumbs.db C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 15,
+            "text": "Removing Files from Git Remove File from Repository and Disk git rm file.txt git commit -m \"Remove file.txt\" Remove File from Repository but Keep on Disk git rm --cached file.txt git commit -m \"Stop tracking file.txt\" This is useful when you accidentally committed a file that should be ignored. Moving/Renaming Files Git tracks file movements: git mv oldname.txt newname.txt git commit -m \"Rename oldname.txt to newname.txt\" This is equivalent to: mv oldname.txt newname.txt git rm oldname.txt git add newname.txt C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 16,
+            "text": "Practical Examples Example 1: Fixing a Mistake # You accidentally staged a file git add passwords.txt # Unstage it git restore --staged passwords.txt # Add it to .gitignore echo \"passwords.txt\" >> .gitignore # Stage and commit .gitignore git add .gitignore git commit -m \"Add .gitignore to exclude sensitive files\" Example 2: Cleaning Up Working Directory # See what's changed git status # Review the changes git diff # Discard changes to a specific file git restore style.css # Or discard all changes git restore . C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 17,
+            "text": "Command Summary Command Description git status Show working tree status git diff Show unstaged changes git diff --staged Show staged changes git restore [file] Discard working directory changes git restore --staged [file] Unstage files git reset --soft HEAD~1 Undo last commit, keep changes staged git reset HEAD~1 Undo last commit, keep changes unstaged git reset --hard HEAD~1 Undo last commit, discard changes git rm [file] Remove file from repository git rm --cached [file] Stop tracking file git mv [old] [new] Rename/move file Exercise 1. Create a new repository with several files 2. Make changes to multiple files 3. Use git status and git diff to review changes 4. Stage only some changes 5. Create a .gitignore file and add patterns 6. Practice undoing changes with git restore 7. Try amending a commit with git commit --amend 8. Experiment with different reset options (be careful with --hard !) Challenge: Create a file with sensitive data, commit it, then properly remove it from history and add it to .gitignore . C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 18,
+            "text": "Branching & Merging Why Branches Matter Branches allow you to: \u2022 Work on features without affecting the main code \u2022 Experiment safely \u2022 Collaborate without conflicts \u2022 Maintain multiple versions of your project Think of branches as parallel universes of your code. Understanding Branches What is a Branch? A branch is a movable pointer to a commit. The default branch is usually called main (or master in older repositories). View Current Branch git branch The asterisk (*) shows your current branch: * main feature-login bugfix-header C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 19,
+            "text": "View All Branches (Including Remote) git branch -a Creating and Switching Branches Create a New Branch git branch feature-navbar Switch to a Branch git checkout feature-navbar Or with the newer command: git switch feature-navbar Create and Switch in One Command git checkout -b feature-navbar Or: git switch -c feature-navbar C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 20,
+            "text": "Working with Branches Making Changes on a Branch # Create and switch to new branch git checkout -b feature-login # Make changes echo \"Login form\" > login.html git add login.html git commit -m \"Add login form\" # Your changes exist only on this branch Switching Between Branches # Switch back to main git checkout main # login.html doesn't exist here! # Switch back to feature branch git checkout feature-login # login.html is back! Merging Branches Fast-Forward Merge When there are no divergent commits, Git simply moves the pointer forward: # On main branch git checkout main C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 21,
+            "text": "# Merge feature branch git merge feature-navbar Output: Fast-forward navbar.html | 10 ++++++++++ 1 file changed, 10 insertions(+) Three-Way Merge When branches have diverged, Git creates a merge commit: git checkout main git merge feature-login Git will open an editor for the merge commit message. Resolving Merge Conflicts Conflicts occur when the same lines are changed in different branches. What a Conflict Looks Like git merge feature-branch Output: Auto-merging index.html CONFLICT (content): Merge conflict in index.html Automatic merge failed; fix conflicts and then commit the result. C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 22,
+            "text": "Conflict Markers in File <<<<<<< HEAD <h1>Welcome to Our Site</h1> ======= <h1>Welcome to My Website</h1> >>>>>>> feature-branch Resolving Conflicts 1. Open the conflicted file 2. Decide which changes to keep 3. Remove conflict markers 4. Stage and commit # After editing the file git add index.html git commit -m \"Resolve merge conflict in index.html\" Conflict Resolution Strategies Understanding \u201cours\u201d and \u201ctheirs\u201d: During a merge conflict, Git uses specific terminology: - \u201cours\u201d = The branch you\u2019re currently on (the branch you\u2019re merging INTO) - \u201ctheirs\u201d = The branch you\u2019re merging FROM (the incoming changes) Keep current branch changes (ours): git checkout --ours index.html This keeps the version from your current branch, discarding all changes from the incoming branch. Works properly when: - You\u2019re certain your current branch has the correct implementation - The incoming changes are outdated or incorrect - You want to maintain consistency with other files in your branch Keep incoming branch changes (theirs): C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 23,
+            "text": "git checkout --theirs index.html This accepts all changes from the branch you\u2019re merging, discarding your current branch\u2019s version. Works properly when: - The incoming branch has the most up-to- date or correct version - Your current changes are no longer needed - You want to fully adopt the incoming implementation Important Note: These commands work ONLY during an active merge conflict. They replace the entire file with either version, not individual conflict sections. Use a merge tool: git mergetool Branch Management Delete a Branch After merging, you can delete the branch: # Delete local branch git branch -d feature-navbar # Force delete (if not merged) git branch -D feature-navbar Rename a Branch # Rename current branch git branch -m new-name # Rename a different branch git branch -m old-name new-name C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 24,
+            "text": "List Merged/Unmerged Branches # Show merged branches git branch --merged # Show unmerged branches git branch --no-merged Branching Strategies Feature Branch Workflow # 1. Create feature branch git checkout -b feature-shopping-cart # 2. Work on feature # ... make commits ... # 3. Merge back to main git checkout main git merge feature-shopping-cart # 4. Delete feature branch git branch -d feature-shopping-cart Hotfix Workflow # 1. Create hotfix from main git checkout main git checkout -b hotfix-security # 2. Fix the issue # ... make changes ... git commit -m \"Fix security vulnerability\" C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 25,
+            "text": "# 3. Merge to main git checkout main git merge hotfix-security # 4. Also merge to develop if exists git checkout develop git merge hotfix-security Visualizing Branches See Branch Graph git log --graph --oneline --all Output: * 3a4f5d6 (HEAD -> main) Merge feature-login |\\ | * 8b9c0d1 (feature-login) Add login form * | 7e2f3a5 Update homepage |/ * 1d2e3f4 Initial commit See Branch Divergence git log main..feature-branch Shows commits in feature-branch that aren\u2019t in main. Best Practices 1. Keep branches focused - One feature per branch C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 26,
+            "text": "2. Use descriptive names - feature-user-auth not new-stuff 3. Delete merged branches - Keep repository clean 4. Merge regularly - Don\u2019t let branches diverge too much 5. Test before merging - Ensure branch works correctly Common Branch Naming Conventions \u2022 feature/ - New features (feature/user-login) \u2022 bugfix/ - Bug fixes (bugfix/header-alignment) \u2022 hotfix/ - Urgent production fixes (hotfix/security-patch) \u2022 release/ - Release preparation (release/v2.0) \u2022 chore/ - Maintenance tasks (chore/update-dependencies) Command Summary Command Description git branch List branches git branch [name] Create branch git checkout [branch] Switch branch git checkout -b [branch] Create and switch git switch [branch] Switch branch (newer) git switch -c [branch] Create and switch (newer) git merge [branch] Merge branch into current git branch -d [branch] Delete branch git branch -m [new-name] Rename branch git log --graph --oneline --all Visualize branches C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 27,
+            "text": "Practice Exercise 1. Create a new repository 2. Create a file main.txt with \u201cMain branch content\u201d 3. Create a branch called feature-a 4. Add a file feature-a.txt and commit 5. Switch back to main 6. Create another branch feature-b from main 7. Add a file feature-b.txt and commit 8. Merge feature-a into main 9. Merge feature-b into main 10. Create a conflict intentionally and resolve it Advanced: Try rebasing instead of merging to maintain a linear history. C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 28,
+            "text": "Essential Remote Repository Commands Connecting to Remotes View Remotes git remote -v Add Remote git remote add origin https://github.com/username/repository.git Change Remote URL git remote set-url origin https://github.com/username/new-repo.git Core Operations Clone Repository git clone https://github.com/username/repository.git Push Changes # First push (set upstream) git push -u origin main C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 29,
+            "text": "# Regular push git push # Push specific branch git push origin branch-name Pull Changes # Pull (fetch + merge) git pull # Pull specific branch git pull origin branch-name Fetch Changes # Fetch without merging git fetch # Fetch all remotes git fetch --all Branch Management List Remote Branches git branch -r Delete Remote Branch git push origin --delete branch-name C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 30,
+            "text": "Git Stash - Essential Commands What is Git Stash? Git stash temporarily saves your uncommitted changes so you can work on something else, then come back and re-apply them later. Core Stash Commands Save Changes to Stash # Stash all changes git stash # Stash with a message git stash save \"work in progress on feature X\" # Include untracked files git stash -u View Stashes # List all stashes git stash list Output example: stash@{0}: On main: work in progress on feature X stash@{1}: WIP on develop: 5002d47 fix conflict C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 31,
+            "text": "Apply Stash # Apply most recent stash git stash apply # Apply specific stash git stash apply stash@{2} # Apply and remove from stash list git stash pop Remove Stashes # Remove most recent stash git stash drop # Remove specific stash git stash drop stash@{1} # Clear all stashes git stash clear Useful Stash Operations View Stash Contents # Show files in latest stash git stash show # Show detailed diff git stash show -p # Show specific stash diff git stash show -p stash@{1} C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 32,
+            "text": "Create Branch from Stash # Create new branch and apply stash git stash branch new-feature-branch Stash Specific Files # Interactive stash git stash -p Common Use Cases Switch Branches Quickly # Working on feature, need to fix bug on main git stash git checkout main # Fix bug... git checkout feature-branch git stash pop Pull Without Committing git stash git pull git stash pop C o d e W i t h H a r r y"
+        },
+        {
+            "source": "git_github.pdf",
+            "page_number": 33,
+            "text": "Commands Summary Command Description git stash Save changes to stash git stash list List all stashes git stash apply Apply stash without removing git stash pop Apply and remove stash git stash drop Delete a stash git stash show View stash contents git stash clear Remove all stashes git stash branch [name] Create branch from stash C o d e W i t h H a r r y"
+        }
+    ]
+}

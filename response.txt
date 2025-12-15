@@ -1,0 +1,9 @@
+Conditional probability is the probability of an event A occurring given that another event B has already occurred. It helps us update our understanding based on new information. It is denoted as:
+
+P(A|B) = P(A and B) / P(B)
+
+This is read as "The probability of A given B."
+
+For a detailed explanation, you can refer to the file "Probability.pdf" on page 12, where conditional probability is introduced intuitively.
+
+Feel free to check that page in the Probability.pdf for more examples and explanations!

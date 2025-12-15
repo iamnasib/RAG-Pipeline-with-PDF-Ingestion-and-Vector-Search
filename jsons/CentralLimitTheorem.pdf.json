@@ -1,0 +1,14 @@
+{
+    "chunks": [
+        {
+            "source": "CentralLimitTheorem.pdf",
+            "page_number": 1,
+            "text": "Central Limit Theorem Explained 1. What is the Mean? The mean (or average) of a dataset is the sum of all values divided by the number of values. Formula: mean = (x1 + x2 + x3 + \u2026 + xn) / n It represents the central value of the data. 2. What is the Standard Deviation? The standard deviation measures how spread out the numbers are from the mean. Steps to calculate standard deviation: 1. Find the mean 2. Subtract the mean from each value and square the result 3. Take the average of these squared differences (this is the variance) 4. Take the square root of the variance Formula: standard deviation (sigma) = sqrt( (1/n) * sum((xi - mean)^2) ) A smaller standard deviation means the data points are close to the mean. A larger standard deviation means the data is more spread out."
+        },
+        {
+            "source": "CentralLimitTheorem.pdf",
+            "page_number": 2,
+            "text": "3. Central Limit Theorem (CLT) The Central Limit Theorem states: If you take many random samples of size n from any population (with finite mean and variance), then the distribution of the sample means will tend to be approximately normal as n becomes large \u2014 regardless of the shape of the original population. 4. Mathematical Expression Let X1, X2, \u2026, Xn be n independent, identically distributed (i.i.d) random variables with: \u2022 Mean = mu \u2022 Standard deviation = sigma Then the sampling distribution of the sample mean (denoted as X\u0304 ) approaches a normal distribution with: \u2022 Mean = mu \u2022 Standard deviation = sigma / sqrt(n)"
+        }
+    ]
+}

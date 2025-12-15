@@ -1,0 +1,89 @@
+{
+    "chunks": [
+        {
+            "source": "Probability.pdf",
+            "page_number": 1,
+            "text": "Introduction to Probability in Data Science 1. What is Probability? Probability is a measure of the likelihood that a particular event will occur. It ranges from 0 (impossible) to 1 (certain). Probability is used to model uncertanity with data and make informed decisions based on that uncertainty. Examples: \u2022 Tossing a coin \u2022 Rolling a die \u2022 Predicting customer churn 2. Role of Probability in Data Science Probability forms the foundation of statistical inference, machine learning, and decision-making under uncertainty. Data scientists use it to: \u2022 Estimate unknown values from sample data \u2022 Evaluate risks and uncertainties \u2022 Make predictions using probabilistic models"
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 2,
+            "text": "3. Types of Probability Theoretical Probability Based on known possible outcomes. \u2022 Example: Probability of getting heads in a fair coin = 0.5 Empirical (Experimental) Probability Based on observed data. \u2022 Example: Probability that a user clicks an ad based on 10,000 past impressions. 4. Key Concepts \u2022 Sample Space (S): All possible outcomes of an experiment. \u2022 Event (E): A subset of the sample space; one or more outcomes. Example: For rolling a die: \u2022 Sample space: {1, 2, 3, 4, 5, 6} \u2022 Event (even number): {2, 4, 6} 5. Real-World Business Scenarios \u2022 Predicting customer conversion rate from a marketing campaign \u2022 Estimating product failure rate in manufacturing \u2022 Calculating insurance risks \u2022 Detecting fraud in financial transactions"
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 3,
+            "text": "Calculating Probability Formula: P(E) = Number of favorable outcomes / Total number of outcomes Where: \u2022 P(E) is the probability of event E \u2022 Number of favorable outcomes is the count of outcomes that satisfy event E \u2022 Total number of outcomes is the count of all possible outcomes in the sample space Example: If you roll a die, the probability of rolling a 3 is: P(rolling a 3) = Number of favorable outcomes (1) / Total number of outcomes (6) = 1/6 \u2248 0.1667 Quick Quiz 1. What is the probability of rolling a 5 on a fair six-sided die? 2. Two fair six-sided dice are rolled. What is the probability that at least one of the dice shows a 4? Homework / Practice 1. List three real-world problems in Data Science where probability is involved. 2. Identify the sample space and possible events for each. 3. Try calculating a simple empirical probability using past data (if available)."
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 4,
+            "text": "Types of Experiments 1. Deterministic \u2013 Always produces the same outcome when repeated under identical conditions. 2. Probabilistic / Random \u2013 Outcome is uncertain and may vary even if the experiment is repeated under identical conditions. Sample Space The sample space is the set of all possible outcomes of a probabilistic experiment. Examples: - Rolling a Die \u2192 { 1, 2, 3, 4, 5, 6 } - Tossing 2 Coins \u2192 { (HH), (HT), (TH), (TT) } For Coins - Number of possible outcomes = 2\u207f (where n is the number of coins) For Dice - Number of possible outcomes = 6\u207f (where n is the number of dice) For Cards A standard deck contains 52 cards: \u2022 26 Red Cards \u2022 13 \u2665\ufe0f Hearts \u2192 A, 2\u201310, J, Q, K \u2022 13 \u2666\ufe0f Diamonds \u2192 A, 2\u201310, J, Q, K \u2022 26 Black Cards \u2022 13 \u2660\ufe0f Spades \u2192 A, 2\u201310, J, Q, K \u2022 13 \u2663\ufe0f Clubs \u2192 A, 2\u201310, J, Q, K"
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 5,
+            "text": "Conclusion Understanding the basic types of experiments and the concept of sample space is essential for solving probability problems. Knowing the number of possible outcomes for coins, dice, and cards helps in calculating probabilities accurately. Mastery of these fundamentals forms the foundation for more advanced topics in probability and statistics. Questions 1. You roll a fair six-sided die. What is the probability of getting an even number? 2. Two coins are tossed. Find the sample space associated with this random experiment. 3. Two six-sided dice are rolled. What is the probability that the sum is 7? 4. A bag contains 3 red, 2 blue, and 5 green balls. What is the probability of randomly selecting a red ball? 5. A card is drawn at random from a deck. Find the probability of: - Getting a heart - Getting a face card"
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 6,
+            "text": "Basic Rules of Probability 1. Important Definitions In probability, understanding the basic definitions is crucial for grasping more complex concepts. \u2022 Experiment: An action or process that leads to one or more outcomes (e.g., rolling a die). Deterministic experiments have predictable outcomes, while probabilistic or random experiments have uncertain outcomes. \u2022 Outcome: A possible result of an experiment (e.g., rolling a 3 on a die). \u2022 Probability (P): A measure of the likelihood that an event will occur, ranging from 0 (impossible) to 1 (certain). \u2022 P(AUB): The probability of event A or event B occurring. \u2022 P(A\u2229B): The probability of both events A and B occurring. \u2022 Sample Space (S): The set of all possible outcomes of an experiment. \u2022 Event (E): A subset of the sample space. \u2022 Mutually Exclusive Events: Two events that cannot occur at the same time (e.g., rolling a 2 and rolling a 5 on a die). P(A\u2229B)=0 \u2022 Independent Events: Two events where the occurrence of one does not affect the other. P(A\u2229B)=P(A)\u22c5P(B) \u2022 Certain Event: An event that is guaranteed to happen, with a probability of 1. \u2022 Impossible Event: An event that cannot happen, with a probability of 0. \u2022 Exhaustive Events: A set of events that cover the entire sample space, meaning at least one of them must occur."
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 7,
+            "text": "Example: Tossing a die: \u2022 Sample space: S = {1, 2, 3, 4, 5, 6} \u2022 Event (E): Rolling an even number = {2, 4, 6} 2. The Complement Rule The complement of an event A is the event that A does not occur. \u2022 Notation: A\u1d9c \u2022 Rule: P(A\u1d9c) = 1 \u2212 P(A) Example: If the probability of rain today is 0.3, the probability it won\u2019t rain is: - P(No Rain) = 1 \u2212 0.3 = 0.7 3. The Addition Rule Used to calculate the probability of the union of two events. For general events: P(A or B) = P(A) + P(B) \u2212 P(A and B) For mutually exclusive events: P(A or B) = P(A) + P(B) Example: \u2022 P(A) = 0.4, P(B) = 0.5, P(A and B) = 0.2 \u2022 P(A or B) = 0.4 + 0.5 \u2212 0.2 = 0.7"
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 8,
+            "text": "4. The Multiplication Rule Used to find the probability that two events occur together. For Independent events: P(A and B) = P(A) \u00d7 P(B) Example: A event A is rolling a 3 on a first throw of a die, and event B is rolling an even number on second throw. \u2022 P(A) = 1/6 (rolling a 3) \u2022 P(B) = 3/6 (rolling a 2, 4, or 6) \u2022 P(A and B) = P(A) \u00d7 P(B) = (1/6) \u00d7 (3/6) = 1/12 For Dependent events: P(A and B) = P(A) \u00d7 P(B | A) Example: A bag contains 5 red and 3 blue balls. Two balls are drawn without replacement. Let: \u2022 Event A be drawing a red ball first. \u2022 Event B be drawing a red ball second. \u2022 P(A) = 5/8 (5 red balls out of 8) \u2022 After removing one red ball, there are 4 red left out of 7 total: P(B/A) = 4/7 \u2022 P(A and B) = (5/8) X (4/7)= 20/56 = 5/14 So the probability of drawing two red balls without replacement is 5/14"
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 9,
+            "text": "5. Independent vs Dependent Events - More examples \u2022 Independent: The outcome of one event does not affect the other. \u2022 Example: Tossing two coins. \u2022 Dependent: One event affects the probability of the other. \u2022 Example: Drawing two cards without replacement. 6. Mutually Exclusive Events Two events are mutually exclusive if they cannot happen at the same time. Example: \u2022 Event A: Rolling a 2 \u2022 Event B: Rolling a 5 \u2022 These are mutually exclusive because a die can\u2019t show both at once. Summary This lesson covered key probability rules and concepts that are foundational for more advanced topics like distributions and statistical inference. \u2022 Complement Rule: P(A\u1d9c) = 1 \u2212 P(A) \u2022 Addition Rule for unions \u2022 Multiplication Rule for intersections \u2022 Understanding independence and exclusivity"
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 10,
+            "text": "Homework / Practice 1. A card is drawn from a standard deck. What is the probability of drawing a red card or a queen? 2. If two dice are rolled, what is the probability that both show even numbers? 3. Think of an example from your daily life where two events are dependent."
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 11,
+            "text": "Practice Questions 1. A box contains 4 red, 3 green, and 2 blue balls. One ball is picked at random. What is the probability that the ball is not green? 2. Two coins are tossed. What is the probability of getting at least one head? 3. A number is chosen at random from the set {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}. What is the probability that the number is a multiple of 3 or 5? 4. A bag contains 6 white and 4 black balls. Two balls are drawn with replacement. What is the probability that both are white? 5. A student knows the answer to 70% of the questions on a test. If one question is selected at random, what is the probability that the student doesn\u2019t know the answer?"
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 12,
+            "text": "Conditional Probability - An Intuitive Introduction What is Conditional Probability? Conditional probability is the probability of an event A occurring, given that another event B has already occurred. It helps us update our understanding based on new information. We denote it as: P(A/B) = P(A and B) / P(B) This is read as: \u201cThe probability of A given B.\u201d Law of Total Probability The Law of Total Probability helps you find the probability of an event A by breaking it down based on other known events B1 , B2 , \u2026, Bn . Formula: P(A) = P(A/B1) * P(B1) + P(A/B2) * P(B2) + \u2026 + P(A/Bn) * P(Bn) Conditions to Use This Law: 1. Partition of the Sample Space The events B1 , B2 , \u2026, Bn must: 1. Be mutually exclusive (no overlap): No two events can happen at the same time."
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 13,
+            "text": "2. Be collectively exhaustive: Together, they cover the entire sample space. 2. Known Probabilities You must know: 1. P(Bi) for each event in the partition. 2. P(A/Bi), the conditional probability of A given Bi. 3. P(Bi) > 0 The probability of each Bi must be greater than 0, since you can\u2019t condition on an impossible event. Real-life Analogy Suppose you have a box containing: \u2022 5 red balls \u2022 3 blue balls \u2022 2 green balls Now, you\u2019re told that the ball picked is not green. What is the probability that it\u2019s red? Let: \u2022 A = ball is red \u2022 B = ball is not green Now, out of the 8 balls that are not green (5 red + 3 blue), 5 are red. So: P(Red / Not Green) = 5 / 8 Formula Breakdown If we know: \u2022 P(A and B): The probability that both A and B happen \u2022 P(B): The probability that B happens"
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 14,
+            "text": "Then: P(A / B) = P(A and B) / P(B) This means: among all the outcomes where B occurs, how many also include A? Example Problem A class has 60% boys and 40% girls. 30% of the boys and 10% of the girls play football. If a randomly selected student is a football player, what is the probability that the student is a boy? Let: \u2022 B = student is a boy \u2192 P(B) = 0.6 \u2022 G = student is a girl \u2192 P(G) = 0.4 \u2022 F = student plays football \u2022 P(F / B) = 0.3 \u2022 P(F / G) = 0.1 Now calculate the total probability that a student plays football: P(F) = P(F / B) * P(B) + P(F / G) * P(G) P(F) = 0.3 * 0.6 + 0.1 * 0.4 = 0.18 + 0.04 = 0.22 Now use conditional probability to find P(B / F): P(B / F) = (P(F / B) * P(B)) / P(F) P(B / F) = 0.18 / 0.22 \u2248 0.818 So, there\u2019s about an 81.8% chance that a football player is a boy. Common Mistakes to Avoid \u2022 Confusing P(A / B) with P(B / A) \u2022 Forgetting to divide by P(B) \u2022 Assuming P(A / B) is the same as P(B / A) \u2014 they are not"
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 15,
+            "text": "Bayes\u2019 Theorem Bayes\u2019 Theorem is written as: P(A / B) = [P(B / A) * P(A)] / P(B) where: \u2022 P(A / B) is the probability of event A occurring given that event B has occurred. \u2022 P(B / A) is the probability of event B occurring given that event A has occurred. \u2022 P(A) is the prior probability of event A. This can also be interpreted as: P(A / B) = [P(B / A) * P(A)] / [P(B / A) * P(A) + P(B / No A) * P(No A)] It calculates the probability of event A given that event B has occurred, using the known conditional probability of B given A. Proof of Bayes\u2019 Theorem We start with the definition of conditional probability: 1. P(A / B) = P(A and B) / P(B) 2. P(B / A) = P(A and B) / P(A) From equation (2), we can write: P(A and B) = P(B / A) * P(A) Now substitute this into equation (1): P(A / B) = [P(B / A) * P(A)] / P(B)"
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 16,
+            "text": "This is Bayes\u2019 Theorem. Example: Medical Test Problem Suppose a disease affects 1% of the population. A test for the disease has the following characteristics: \u2022 If a person has the disease, the test is positive 99% of the time \u2192 P(Positive / Disease) = 0.99 \u2022 If a person does not have the disease, the test is positive 5% of the time \u2192 P(Positive / No Disease) = 0.05 \u2022 The chance of having the disease \u2192 P(Disease) = 0.01 \u2022 The chance of not having the disease \u2192 P(No Disease) = 0.99 A person takes the test and gets a positive result. What is the probability they actually have the disease? Let: \u2022 A = Disease \u2022 B = Positive test We apply Bayes\u2019 Theorem: P(Disease / Positive) = [P(Positive / Disease) * P(Disease)] / P(Positive) First, calculate P(Positive): P(Positive) = P(Positive / Disease) * P(Disease) + P(Positive / No Disease) * P(No Disease) P(Positive) = 0.99 * 0.01 + 0.05 * 0.99 P(Positive) = 0.0099 + 0.0495 = 0.0594 Now calculate P(Disease / Positive): P(Disease / Positive) = 0.0099 / 0.0594 \u2248 0.1667"
+        },
+        {
+            "source": "Probability.pdf",
+            "page_number": 17,
+            "text": "Conclusion: Even though the test is 99% accurate, the probability that a person actually has the disease given a positive result is only 16.67%. This is because the disease is very rare, and false positives affect the result significantly."
+        }
+    ]
+}

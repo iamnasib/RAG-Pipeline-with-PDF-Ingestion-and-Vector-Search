@@ -1,0 +1,349 @@
+{
+    "chunks": [
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 1,
+            "text": "Introduction to Databases What is a Database? A Database is an organized collection of structured information or data, typically stored electronically in a computer system. Its a way to store data in a format that is easily accessible Example: Think of a library where books are organized by topic, author, and title \u2013 that\u2019s essentially what a database does with data. Why Do We Need Databases? \u2022 To store, manage, and retrieve large amounts of data efficiently. \u2022 To prevent data duplication and maintain data integrity. \u2022 To allow multiple users to access and manipulate data simultaneously. What is SQL? SQL (Structured Query Language) is the standard programming language used to communicate with and manipulate databases. Common operations using SQL: \u2022 INSERT \u2013 Add new records (CREATE) \u2022 SELECT \u2013 Retrieve data (READ) \u2022 UPDATE \u2013 Modify existing data (UPDATE) \u2022 DELETE \u2013 Remove records (DELETE)"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 2,
+            "text": "These operations are usually referred to as CRUD Operations. CRUD stands for Create, Read, Update, and Delete \u2014 the four basic operations used to manage data in a database. Comparison with Excel Databases and Excel may seem similar at first, but they work differently under the hood. \u2022 In Excel, a sheet is like a table in a database. \u2022 Each row in the sheet is similar to a record (or entry) in a database table. \u2022 Each column in Excel corresponds to a field (or attribute) in a table. \u2022 Excel stores all data in one file, whereas a database can contain multiple related tables. \u2022 In databases, you can define strict data types and rules, which Excel doesn\u2019t enforce. \u2022 Unlike Excel, databases allow complex querying, relationships between tables, and secure multi-user access. Think of a database as a more powerful, structured, and scalable version of Excel for data management. Relational vs Non-relational Databases Relational databases store data in structured tables with predefined schemas and relationships between tables (e.g., MySQL, PostgreSQL). Non-relational databases (NoSQL) use flexible formats like documents, key-value pairs, or graphs, and don\u2019t require a fixed schema (e.g., MongoDB, Firebase). Relational is ideal for structured data and complex queries, while non-relational is better for scalability and unstructured data. Feature Relational (SQL) Non-relational (NoSQL) Structure Tables (rows & cols) Documents, Key-Value Language SQL Varies (Mongo Query, etc.)"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 3,
+            "text": "Feature Relational (SQL) Non-relational (NoSQL) Schema Fixed schema Flexible schema Examples MySQL, PostgreSQL MongoDB, Firebase What is DBMS? A Database Management System (DBMS) is software that interacts with users, applications, and the database itself to capture and analyze data. It allows users to create, read, update, and delete data in a structured way. \u2022 Examples: MySQL, PostgreSQL, Oracle Database, SQLite. \u2022 Functions: Data storage, retrieval, security, backup, and recovery. What is MySQL? MySQL is an open-source relational database management system (RDBMS) that uses SQL. \u2022 Widely used in web development \u2022 High performance and reliability \u2022 Powers platforms like WordPress, Facebook (early days), and YouTube Real-World Use Cases \u2022 E-commerce websites to store customer orders and product listings \u2022 Banking systems to handle transactions securely \u2022 Social networks to manage user data, messages, and posts"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 4,
+            "text": "Summary \u2022 Databases are essential for structured data storage and retrieval. \u2022 SQL is the language used to interact with relational databases. \u2022 MySQL is a popular and powerful SQL-based database system. \u2022 Understanding databases is a must-have skill for any developer or data analyst."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 5,
+            "text": "Creating a Database in MySQL To start working with MySQL, the first step is to create a database. Syntax CREATE DATABASE database_name; Example CREATE DATABASE student_db; This command creates a new database named student_db . Tips \u2022 Database names should be unique. \u2022 Avoid using spaces or special characters. \u2022 Use lowercase and underscores ( _ ) for better readability (e.g., employee_records ). Viewing All Databases To see all available databases: SHOW DATABASES;"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 6,
+            "text": "Switching to a Database Before working with tables, you must select the database: USE student_db; Dropping a Database To delete an existing database (this action is irreversible): DROP DATABASE database_name; Example DROP DATABASE student_db; Be very careful! This will permanently delete all data and tables in the database."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 7,
+            "text": "Creating a Table in MySQL Once you have selected a database, you can create tables to organize and store data. Syntax CREATE TABLE table_name ( column1 datatype constraints, column2 datatype constraints, ... ); Example CREATE TABLE students ( id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL DEFAULT 'No Name', age INT, email VARCHAR(100) UNIQUE, admission_date DATE ); Explanation \u2022 id INT AUTO_INCREMENT PRIMARY KEY \u2013 A unique identifier for each student that auto-increments. \u2022 name VARCHAR(100) NOT NULL \u2013 Name must be provided. \u2022 age INT \u2013 Stores numeric values for age. \u2022 email VARCHAR(100) UNIQUE \u2013 Each email must be different. \u2022 admission_date DATE \u2013 Stores the date of admission."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 8,
+            "text": "Commonly Used Data Types \u2022 INT \u2013 Whole numbers (e.g., age, quantity) \u2022 VARCHAR(n) \u2013 Variable-length string (e.g., names, emails) \u2022 TEXT \u2013 Long text strings (e.g., descriptions) \u2022 DATE \u2013 Stores date values (YYYY-MM-DD) \u2022 DATETIME \u2013 Stores date and time values \u2022 BOOLEAN \u2013 Stores TRUE or FALSE Common Constraints \u2022 PRIMARY KEY \u2013 Uniquely identifies each record \u2022 NOT NULL \u2013 Ensures the column cannot be left empty \u2022 UNIQUE \u2013 Ensures all values in a column are different \u2022 AUTO_INCREMENT \u2013 Automatically increases numeric values \u2022 DEFAULT \u2013 Sets a default value for the column \u2022 FOREIGN KEY \u2013 Enforces relationships between tables View All Tables SHOW TABLES; View Table Structure DESCRIBE students; Viewing Table Data SELECT * FROM students; Tables are the backbone of any relational database. A well-structured table leads to efficient data management and fewer issues later on."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 9,
+            "text": "Modifying a Table in MySQL As your application grows or requirements change, you may need to make changes to existing tables. MySQL provides several ALTER and related statements for such modifications. Renaming a Table Use the RENAME TABLE command to change the name of an existing table. RENAME TABLE old_table_name TO new_table_name; Dropping a Table To permanently delete a table and all of its data: DROP TABLE table_name; Renaming a Column To rename a column in an existing table: ALTER TABLE table_name RENAME COLUMN old_column_name TO new_column_name; Dropping a Column To remove a column from a table: ALTER TABLE table_name DROP COLUMN column_name;"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 10,
+            "text": "Adding a Column To add a new column to an existing table: ALTER TABLE table_name ADD COLUMN column_name datatype constraints; Example: ALTER TABLE students ADD COLUMN gender VARCHAR(10); Modifying a Column To change the data type or constraints of an existing column: ALTER TABLE table_name MODIFY COLUMN column_name new_datatype new_constraints; Example: ALTER TABLE students MODIFY COLUMN name VARCHAR(150) NOT NULL; Changing the Order of Columns To change the order of columns in a table, you can use the MODIFY command with the AFTER keyword: ALTER TABLE table_name MODIFY COLUMN column_name datatype AFTER another_column_name; Always review changes on production databases carefully. Use tools like DESCRIBE table_name to verify structure before and after modifications."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 11,
+            "text": "How to Insert Rows into a Table in MySQL Inserting data into a MySQL table can be done in two ways: inserting one row at a time or inserting multiple rows at once. Below are the steps to create a new database, create a table, and insert data into it. 1. Create a New Database CREATE DATABASE schooldb; 2. Select the Database USE schooldb; 3. Create the student Table CREATE TABLE student ( id INT PRIMARY KEY, name VARCHAR(100), age INT, grade VARCHAR(10), date_of_birth DATE );"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 12,
+            "text": "4. Insert Data into the Table Insert One Row at a Time INSERT INTO student (id, name, age, grade, date_of_birth) VALUES (1, 'Ayesha Khan', 16, '10th', '2007-05-15'); INSERT INTO student (id, name, age, grade, date_of_birth) VALUES (2, 'Ravi Sharma', 17, '11th', '2006-03-22'); INSERT INTO student (id, name, age, grade, date_of_birth) VALUES (3, 'Meena Joshi', 15, '9th', NULL); INSERT INTO student (id, name, age, grade, date_of_birth) VALUES (4, 'Arjun Verma', 18, '12th', NULL); INSERT INTO student (id, name, age, grade, date_of_birth) VALUES (5, 'Sara Ali', 16, '10th', NULL); INSERT INTO student (id, name, age, grade, date_of_birth) VALUES (6, 'Karan Mehta', 17, '11th', NULL); INSERT INTO student (id, name, age, grade, date_of_birth) VALUES (7, 'Tanya Roy', 1 5, '9th', NULL); INSERT INTO student (id, name, age, grade, date_of_birth) VALUES (8, 'Vikram Singh', 18, '12th', NULL); INSERT INTO student (id, name, age, grade, date_of_birth) VALUES (9, 'Anjali Desai', 16, '10th', NULL); INSERT INTO student (id, name, age, grade, date_of_birth) VALUES (10, 'Farhan Zaidi', 17, '11th', NULL); Insert All Rows at Once INSERT INTO student (id, name, age, grade) VALUES (15, 'Ayesha Khan', 16, '10th'), (25, 'Ravi Sharma', 17, '11th'), (35, 'Meena Joshi', 15, '9th'), (45, 'Arjun Verma', 18, '12th'), (55, 'Sara Ali', 16, '10th'), (65, 'Karan Mehta', 17, '11th'), (75, 'Tanya Roy', 15, '9th'), (85, 'Vikram Singh', 18, '12th'),"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 13,
+            "text": "(95, 'Anjali Desai', 16, '10th'), (105, 'Farhan Zaidi', 17, '11th'); 5. Verify the Inserted Records To check all the data in the table: SELECT * FROM student; This will display all the records in the student table."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 14,
+            "text": "How to Select Data in MySQL Lets now understand how to query data from a table in MySQL using the SELECT statement, filter results using the WHERE clause, and apply different comparison operators including how to work with NULL values. 1. Basic SELECT Statement To retrieve all data from the student table: SELECT * FROM student; To retrieve specific columns (e.g., only name and grade ): SELECT name, grade FROM student; 2. Using the WHERE Clause The WHERE clause is used to filter rows based on a condition. Example: Students in 10th grade SELECT * FROM student WHERE grade = '10th';"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 15,
+            "text": "Example: Students older than 16 SELECT * FROM student WHERE age > 16; 3. Comparison Operators in MySQL Operator Description Example = Equals WHERE age = 16 != Not equal to WHERE grade != '12th' <> Not equal to (alternative) WHERE grade <> '12th' > Greater than WHERE age > 16 < Less than WHERE age < 17 >= Greater than or equal to WHERE age >= 16 <= Less than or equal to WHERE age <= 18 BETWEEN Within a range (inclusive) WHERE age BETWEEN 15 AND 17 IN Matches any in a list WHERE grade IN ('10th', '12th') WHERE grade NOT IN ('9th', NOT IN Excludes list items '11th') WHERE name LIKE 'A%' (names LIKE Pattern matching starting with A) NOT WHERE name NOT LIKE '%a' (names Pattern not matching LIKE not ending in a)"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 16,
+            "text": "4. Handling NULL Values What is NULL ? NULL represents missing or unknown values. It is not equal to 0 , empty string, or any other value. Common Mistake (Incorrect): -- This will not work as expected SELECT * FROM student WHERE grade = NULL; Correct Ways to Handle NULL Condition Correct Syntax Is NULL WHERE grade IS NULL Is NOT NULL WHERE grade IS NOT NULL Example: Select students with no grade assigned SELECT * FROM student WHERE grade IS NULL; Example: Select students who have a grade SELECT * FROM student WHERE grade IS NOT NULL; 5. Combining Conditions You can use AND , OR , and parentheses to combine conditions."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 17,
+            "text": "Example: Students in 10th grade and older than 16 SELECT * FROM student WHERE grade = '10th' AND age > 16; Example: Students in 9th or 12th grade SELECT * FROM student WHERE grade = '9th' OR grade = '12th'; Example: Complex conditions SELECT * FROM student WHERE (grade = '10th' OR grade = '11th') AND age >= 16; 6. Sorting Results with ORDER BY Sort by age in ascending order: SELECT * FROM student ORDER BY age ASC; Sort by name in descending order: SELECT * FROM student ORDER BY name DESC; 7. Limiting Results with LIMIT Get only 5 rows: SELECT * FROM student LIMIT 5;"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 18,
+            "text": "Get 5 rows starting from the 3rd (offset 2): SELECT * FROM student LIMIT 2, 5; You\u2019re right! The _ wildcard is very handy for matching dates, especially when you\u2019re looking for values at a specific position (like a specific day or month). Let\u2019s expand the section accordingly: 8. Using Wildcards with LIKE Wildcards are used with the LIKE operator to search for patterns. They\u2019re helpful when you\u2019re not exactly sure about the full value, or you want to match based on structure or partial content. There are two wildcards in MySQL: \u2022 % \u2013 Matches zero or more characters \u2022 _ \u2013 Matches exactly one character Example: Names starting with 'A' SELECT * FROM students WHERE name LIKE 'A%'; This finds any name that starts with \u2018A\u2019, like Aakash , Ananya , Aryan . Matching Dates with _ Wildcard The _ wildcard is useful for matching specific patterns in date strings, especially in YYYY-MM-DD format. Let\u2019s say you want to find records from the 5th day of any month:"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 19,
+            "text": "SELECT * FROM attendance WHERE date LIKE '____-__-05'; Explanation: \u2022 ____ matches any year (4 characters) \u2022 __ matches any month (2 characters) \u2022 05 is the 5th day You\u2019re basically telling MySQL: \u201cGive me all rows where the date ends with -05 \u2014 which means the 5th of any month, any year.\u201d More Date Pattern Examples Pattern to be Matches Matched '2025-05-%' Any day in May 2025 '2024-12-__' All 2-digit days in December 2024 '____-01-01' 1st January of any year '202_-__-__' Any date in the 2020s decade All dates from day 30 to 39 (not valid, but works '____-__-3_' syntactically) Quick Recap: LIKE Wildcard Matching Pattern Meaning 'A%' Starts with A '%sh' Ends with sh"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 20,
+            "text": "Pattern Meaning '%ar%' Contains \u201car\u201d 'R____' 5-letter name starting with R '____-__-05' Dates with day = 05"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 21,
+            "text": "How to Update Data in a MySQL Table Today we will learn about how to modify existing data in a table using the UPDATE statement. We will see how to use the SET keyword and how to use the WHERE clause to target specific rows. 1. Basic Syntax UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition; \u2022 UPDATE : Specifies the table you want to modify. \u2022 SET : Assigns new values to columns. \u2022 WHERE : Filters which rows should be updated. Always include a WHERE clause unless you want to update all rows. 2. Example Table Assume the following student table: id name age grade 1 Ayesha Khan 16 10th 2 Ravi Sharma 17 11th 3 Meena Joshi 15 9th"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 22,
+            "text": "3. Update a Single Row Example: Change the grade of student with id = 2 to 12th UPDATE student SET grade = '12th' WHERE id = 2; 4. Update Multiple Columns Example: Change age to 17 and grade to \u201810th\u2019 for id = 3 UPDATE student SET age = 17, grade = '10th' WHERE id = 3; 5. Update All Rows Be careful when updating without a WHERE clause. Example: Set all students to age 18 UPDATE student SET age = 18; Warning: This will modify every row in the table."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 23,
+            "text": "6. Conditional Update with Comparison Operators Example: Promote all students in 9th grade to 10th grade UPDATE student SET grade = '10th' WHERE grade = '9th'; Example: Increase age by 1 for students younger than 18 UPDATE student SET age = age + 1 WHERE age < 18; 7. Update Using IS NULL Example: Set default grade to \u2018Unknown\u2019 where grade is NULL UPDATE student SET grade = 'Unknown' WHERE grade IS NULL; 8. Verify the Update To check the results: SELECT * FROM student;"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 24,
+            "text": "How to Delete Data in a MySQL Table This guide explains how to remove records from a table using the DELETE statement. It covers deleting specific rows using the WHERE clause and the consequences of deleting all rows. 1. Basic Syntax DELETE FROM table_name WHERE condition; \u2022 DELETE FROM : Specifies the table from which to remove rows. \u2022 WHERE : Filters which rows should be deleted. Important: If you omit the WHERE clause, all rows in the table will be deleted. 2. Example Table Assume the following student table: id name age grade 1 Ayesha Khan 16 10th 2 Ravi Sharma 17 12th 3 Meena Joshi 15 9th"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 25,
+            "text": "3. Delete a Specific Row Example: Delete student with id = 2 DELETE FROM student WHERE id = 2; 4. Delete Rows Based on a Condition Example: Delete all students in 9th grade DELETE FROM student WHERE grade = '9th'; 5. Delete Rows Using Comparison Operators Example: Delete all students younger than 16 DELETE FROM student WHERE age < 16; 6. Delete Rows Where a Column is NULL Example: Delete students with no grade assigned DELETE FROM student WHERE grade IS NULL;"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 26,
+            "text": "7. Delete All Rows (Use with Caution) Example: Remove all data from the student table DELETE FROM student; This deletes all rows but retains the table structure. 8. Completely Remove the Table To delete the table itself (not just the data), use: DROP TABLE student; This removes both the data and the table structure. 9. Verify After Deletion Check the contents of the table: SELECT * FROM student;"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 27,
+            "text": "MySQL Tutorial: AUTOCOMMIT, COMMIT, and ROLLBACK Now, we will explore how MySQL handles transactions using the AUTOCOMMIT , COMMIT , and ROLLBACK statements. Understanding these is essential for maintaining data integrity in your databases, especially in data science workflows where large and complex data operations are common. What is a Transaction? A transaction is a sequence of one or more SQL statements that are executed as a single unit. A transaction has four key properties, known as ACID: \u2022 Atomicity: All or nothing. \u2022 Consistency: Valid state before and after. \u2022 Isolation: Transactions do not interfere. \u2022 Durability: Changes persist after commit. AUTOCOMMIT By default, MySQL runs in autocommit mode. This means that every SQL statement is treated as a separate transaction and is committed automatically right after it is executed. Check Autocommit Status SELECT @@autocommit;"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 28,
+            "text": "Disable Autocommit SET autocommit = 0; This allows you to group multiple statements into a transaction manually. Enable Autocommit SET autocommit = 1; COMMIT The COMMIT statement is used to permanently save all the changes made in the current transaction. Example START TRANSACTION; UPDATE accounts SET balance = balance - 100 WHERE id = 1; UPDATE accounts SET balance = balance + 100 WHERE id = 2; COMMIT; Once committed, the changes are visible to other sessions and are stored permanently in the database. ROLLBACK The ROLLBACK statement is used to undo changes made in the current transaction. It is useful if something goes wrong or a condition is not met."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 29,
+            "text": "Example START TRANSACTION; UPDATE accounts SET balance = balance - 100 WHERE id = 1; -- An error or condition check fails here ROLLBACK; After a rollback, all changes since the start of the transaction are discarded. Summary Table Statement Description AUTOCOMMIT Automatically commits every query SET autocommit = 0 Disables autocommit mode COMMIT Saves all changes in a transaction ROLLBACK Reverts all changes in a transaction Best Practices \u2022 Always use transactions when performing multiple related operations. \u2022 Disable autocommit when working with critical data updates. \u2022 Rollback if any step in your transaction fails. \u2022 Test your transactions thoroughly before running them on production data."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 30,
+            "text": "MySQL Tutorial: Getting Current Date and Time MySQL provides built-in functions to retrieve the current date, time, and timestamp. These are commonly used in data logging, time-based queries, and tracking records in data science workflows. 1. CURRENT_DATE Returns the current date in YYYY-MM-DD format. SELECT CURRENT_DATE; Example Output: 2025-05-02 2. CURRENT_TIME Returns the current time in HH:MM:SS format. SELECT CURRENT_TIME; Example Output: 14:23:45"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 31,
+            "text": "3. CURRENT_TIMESTAMP (or NOW() ) Returns the current date and time. SELECT CURRENT_TIMESTAMP; -- or SELECT NOW(); Example Output: 2025-05-02 14:23:45 This is especially useful for storing creation or update times in records. 4. LOCALTIME and LOCALTIMESTAMP These are synonyms for NOW() and return the current date and time. SELECT LOCALTIME; SELECT LOCALTIMESTAMP; These functions return the local date and time of the MySQL server, not the client\u2019s time zone. Important Clarification: The \u201clocal\u201d in LOCALTIME refers to the time zone configured on the MySQL server, not the user\u2019s system. You can check the current server time zone using:"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 32,
+            "text": "5. Using in Table Inserts You can use NOW() or CURRENT_TIMESTAMP to auto-fill date-time columns. INSERT INTO logs (event, created_at) VALUES ('data_import', NOW()); 6. Date and Time Functions Recap Function Returns Example Output CURRENT_DATE Date only 2025-05-02 CURRENT_TIME Time only 14:23:45 NOW() Date and time 2025-05-02 14:23:45 CURRENT_TIMESTAMP Date and time 2025-05-02 14:23:45 LOCALTIME Date and time 2025-05-02 14:23:45 Best Practices \u2022 Use CURRENT_TIMESTAMP for record timestamps. \u2022 Use NOW() in queries to filter records by current time. \u2022 Avoid relying on system time for business logic; prefer database time for consistency."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 33,
+            "text": "SQL Tutorial: Deep Dive into Constraints Constraints in SQL are rules applied to table columns to enforce data integrity, consistency, and validity. They restrict the type of data that can be inserted into a table and help prevent invalid or duplicate entries. Why Use Constraints? \u2022 Ensure data quality and reliability \u2022 Prevent invalid, duplicate, or null data \u2022 Maintain business rules directly in the database layer 1. NOT NULL Constraint Ensures that a column cannot contain NULL values. CREATE TABLE employees ( id INT NOT NULL, name VARCHAR(100) NOT NULL ); Use Case: Make sure critical fields like id , name , or email are always filled."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 34,
+            "text": "2. UNIQUE Constraint Ensures that all values in a column are distinct (no duplicates). CREATE TABLE users ( username VARCHAR(50) UNIQUE, email VARCHAR(100) UNIQUE ); Use Case: Prevent duplicate usernames or email addresses. Note: A table can have multiple UNIQUE constraints, but only one PRIMARY KEY. 3. DEFAULT Constraint Sets a default value for a column if none is provided during insert. CREATE TABLE products ( name VARCHAR(100), status VARCHAR(20) DEFAULT 'in_stock' ); Use Case: Auto-fill common values to reduce data entry effort and prevent missing data. 4. CHECK Constraint Validates that values in a column meet a specific condition."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 35,
+            "text": "CREATE TABLE accounts ( id INT, balance DECIMAL(10,2) CHECK (balance >= 0) ); Use Case: Enforce business rules such as non-negative balances or valid age ranges. Note: MySQL versions before 8.0 parsed CHECK but did not enforce it. From MySQL 8.0 onwards, CHECK constraints are enforced. 5. Naming Constraints You can give explicit names to constraints. This makes them easier to reference, especially when altering or dropping them later. CREATE TABLE students ( roll_no INT PRIMARY KEY, age INT CONSTRAINT chk_age CHECK (age >= 5), email VARCHAR(100) UNIQUE ); Benefits of Named Constraints: \u2022 Improves clarity and debugging \u2022 Useful when using ALTER TABLE to drop constraints"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 36,
+            "text": "6. Constraint Recap Table Enforced By Custom Name Constraint Purpose MySQL Support NOT NULL Disallow null values Yes Yes UNIQUE Disallow duplicate values Yes Yes Set default value if none DEFAULT Yes No given Yes (MySQL CHECK Enforce value conditions Yes 8.0+) Best Practices \u2022 Use constraints to enforce critical rules in the database layer. \u2022 Always name important constraints for easier maintenance. \u2022 Prefer constraints over application-side validation for core rules. \u2022 Test CHECK constraints carefully to ensure compatibility and enforcement in your MySQL version."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 37,
+            "text": "MySQL Foreign Key Tutorial This guide demonstrates how to create a database, define tables, and use foreign keys to establish relationships between them. 1. Create a Database CREATE DATABASE school; USE school; 2. Create Tables We\u2019ll create two tables: \u2022 students \u2022 classes Each student will belong to a class, creating a one-to-many relationship (one class has many students). Create classes Table CREATE TABLE classes ( class_id INT AUTO_INCREMENT PRIMARY KEY, class_name VARCHAR(50) NOT NULL );"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 38,
+            "text": "Create students Table CREATE TABLE students ( student_id INT AUTO_INCREMENT PRIMARY KEY, student_name VARCHAR(100) NOT NULL, class_id INT, FOREIGN KEY (class_id) REFERENCES classes(class_id) ON UPDATE CASCADE ON DELETE SET NULL ); 3. Insert Sample Data Insert into classes INSERT INTO classes (class_name) VALUES ('Mathematics'), ('Science'), ('History'); Insert into students INSERT INTO students (student_name, class_id) VALUES ('Alice', 1), ('Bob', 2), ('Charlie', 1); 4. Explanation of Foreign Key Behavior In the students table: \u2022 class_id is a foreign key. \u2022 It references class_id in the classes table."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 39,
+            "text": "\u2022 ON DELETE SET NULL : If a class is deleted, the related students will have class_id set to NULL . \u2022 ON UPDATE CASCADE : If a class ID changes, it will update automatically in the students table. 5. View the Relationships To check the foreign key constraints: SHOW CREATE TABLE students; To see all foreign keys in the current database: SELECT table_name, column_name, constraint_name, referenced_table_name, referenced_column_name FROM information_schema.key_column_usage WHERE referenced_table_name IS NOT NULL AND table_schema = 'school'; Understanding ON UPDATE CASCADE and ON DELETE SET NULL When you define a foreign key in MySQL, you can specify what should happen to the child table when the parent table is updated or deleted. These are called referential actions."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 40,
+            "text": "1. ON UPDATE CASCADE Definition: If the value in the parent table (i.e., the referenced column) is updated, the corresponding foreign key value in the child table is automatically updated to match. Example: Suppose we update a class_id in the classes table: UPDATE classes SET class_id = 10 WHERE class_id = 1; Then all students in the students table whose class_id was 1 will automatically be updated to 10 . 2. ON DELETE SET NULL Definition: If a row in the parent table is deleted, the foreign key in the child table will be set to NULL for all matching rows. Example: If we delete a class from the classes table: DELETE FROM classes WHERE class_id = 2; Then all students in the students table who were in class 2 will have their class_id set to NULL , indicating that they are no longer assigned to a class. Why Use These Options? \u2022 ON UPDATE CASCADE is useful when the primary key of the parent table might change (rare but possible). \u2022 ON DELETE SET NULL is helpful when you want to preserve child records but indicate that the relationship has been broken."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 41,
+            "text": "Alternatives \u2022 ON DELETE CASCADE : Deletes the child rows when the parent row is deleted. \u2022 ON DELETE RESTRICT : Prevents deletion if any child rows exist. \u2022 ON DELETE NO ACTION : Same as RESTRICT in MySQL. \u2022 ON DELETE SET DEFAULT : Not supported in MySQL (but available in some other DBMSs)."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 42,
+            "text": "MySQL Joins \u2013 A Simple Guide When we have data split across multiple tables, we use joins to combine that data and get the full picture. Let\u2019s say we have two tables: students id name 1 Alice 2 Bob marks student_id subject score 1 Math 95 2 Math 88 2 Science 90 Now let\u2019s see the most common types of joins. 1. INNER JOIN We are telling MySQL to include only the rows that have matching values in both tables. SELECT students.name, marks.subject, marks.score FROM students INNER JOIN marks ON students.id = marks.student_id;"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 43,
+            "text": "This will show only students who have marks recorded. If a student has no marks, they will not appear in the result. 2. LEFT JOIN (or LEFT OUTER JOIN) We are telling MySQL to include all students, even if they don\u2019t have any marks. If there\u2019s no match in the marks table, it will show NULL . SELECT students.name, marks.subject, marks.score FROM students LEFT JOIN marks ON students.id = marks.student_id; This is useful when we want to list all students, and show marks only if available. 3. RIGHT JOIN (or RIGHT OUTER JOIN) We are telling MySQL to include all rows from the right table ( marks ), even if the student is missing from the students table. SELECT students.name, marks.subject, marks.score FROM students RIGHT JOIN marks ON students.id = marks.student_id; This is rarely used unless we expect some marks that don\u2019t have a student record. 5. CROSS JOIN We are telling MySQL to combine every row in the first table with every row in the second table."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 44,
+            "text": "SELECT students.name, marks.subject FROM students CROSS JOIN marks; Use this only when you really want all combinations \u2013 it can produce a lot of rows. Summary Join Type What it does INNER JOIN Only rows with a match in both tables LEFT JOIN All rows from the left table, with matched data if any RIGHT JOIN All rows from the right table, with matched data if any CROSS JOIN All combinations of rows from both tables"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 45,
+            "text": "Using UNION in MySQL The UNION operator is used to combine the result sets of two or more SELECT statements into a single result. It helps when: \u2022 You\u2019re pulling similar data from different tables. \u2022 You want to merge results from multiple queries into one list. When UNION Works 1. Same number of columns in all SELECT statements. 2. Compatible data types in corresponding columns. 3. Columns will be matched by position, not by name. SELECT name, city FROM customers UNION SELECT name, city FROM vendors; This combines names and cities from both tables into a single result. When UNION Doesn\u2019t Work \u2022 If the number of columns is different: -- This will throw an error SELECT name, city FROM customers"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 46,
+            "text": "UNION SELECT name FROM vendors; \u2022 If the data types don\u2019t match: -- Error if 'age' is an integer and 'name' is a string SELECT age FROM users UNION SELECT name FROM students; MySQL will complain that the columns can\u2019t be matched due to type mismatch. UNION vs UNION ALL By default, UNION removes duplicate rows. If you want to keep duplicates, use UNION ALL : SELECT name FROM students UNION ALL SELECT name FROM alumni; Use UNION if: \u2022 You want a clean list without duplicates. Use UNION ALL if: \u2022 You want performance and don\u2019t care about duplicates. \u2022 Or you expect duplicate values and want to preserve them. Practical Use Case Example Let\u2019s say you have two tables: students_2023 and students_2024 ."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 47,
+            "text": "SELECT name, batch FROM students_2023 UNION SELECT name, batch FROM students_2024; This gives a combined list of all students across both years, without duplicates. Sorting the Combined Result You can sort the final output using ORDER BY at the end: SELECT name FROM students_2023 UNION SELECT name FROM students_2024 ORDER BY name;"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 48,
+            "text": "MySQL Functions Functions in MySQL are like built-in tools that help you work with data \u2014 whether you\u2019re manipulating text, doing math, or working with dates. Let\u2019s explore some commonly used functions with simple examples. 1. CONCAT() \u2013 Join strings together We are telling MySQL to combine two or more strings. SELECT CONCAT('Hello', ' ', 'World') AS greeting; -- Output: Hello World You can also use it with columns: SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM users; 2. NOW() \u2013 Get the current date and time We are telling MySQL to give us the current date and time. SELECT NOW(); -- Output: 2025-05-03 14:20:45 (example)"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 49,
+            "text": "3. LENGTH() \u2013 Find length of a string (in bytes) SELECT LENGTH('Harry'); -- Output: 5 Useful for validations or checking string size. 4. ROUND() \u2013 Round numbers to a specific number of decimal places SELECT ROUND(12.6789, 2); -- Output: 12.68 5. DATEDIFF() \u2013 Difference between two dates (in days) SELECT DATEDIFF('2025-06-01', '2025-05-01'); -- Output: 31 Comprehensive List of Useful MySQL Functions Function Description Example Usage CONCAT('A', 'B') \u2192 CONCAT() Combine multiple strings 'AB' Length of a string (in LENGTH() LENGTH('Hi') \u2192 2 bytes)"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 50,
+            "text": "Function Description Example Usage Number of characters in a CHAR_LENGTH(' \u0939\u093f\u0902\u0926\u0940') \u2192 CHAR_LENGTH() string 5 Convert string to LOWER('MySQL') \u2192 LOWER() lowercase mysql Convert string to UPPER('hello') \u2192 UPPER() uppercase HELLO REPLACE('abc', 'b', 'x') REPLACE() Replace part of a string \u2192 axc Remove leading/trailing TRIM(' hello ') \u2192 TRIM() spaces hello NOW() Current date and time NOW() CURDATE() Current date only CURDATE() CURTIME() Current time only CURTIME() DATE() Extract date from datetime DATE(NOW()) Get month name from MONTHNAME('2025-05-03') MONTHNAME() date \u2192 May YEAR() Extract year from date YEAR(NOW()) DAY() Extract day of month DAY('2025-05-03') \u2192 3 DATEDIFF('2025-06-01', DATEDIFF() Days between two dates '2025-05-01') ROUND(5.678, 2) \u2192 ROUND() Round to decimal places 5.68 Round down to nearest FLOOR() FLOOR(5.9) \u2192 5 whole number Round up to nearest CEIL() CEIL(5.1) \u2192 6 whole number"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 51,
+            "text": "Function Description Example Usage ABS() Absolute value ABS(-10) \u2192 10 MOD() Get remainder MOD(10, 3) \u2192 1 Random decimal between RAND() RAND() 0 and 1 Replace NULL with a IFNULL(NULL, 'N/A') \u2192 IFNULL() default value N/A Return first non-NULL COALESCE(NULL, '', COALESCE() value in a list 'Hello') \u2192 '' COUNT() Count rows COUNT(*) Average of a numeric AVG() AVG(score) column SUM() Total sum of values SUM(score) MIN() Smallest value MIN(score) MAX() Largest value MAX(score)"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 52,
+            "text": "MySQL Views A View in MySQL is like a virtual table. It doesn\u2019t store data by itself but instead shows data from one or more tables through a saved SQL query. You can use a view just like a regular table: SELECT from it, filter it, join it, etc. Why Use Views? \u2022 To simplify complex queries by giving them a name. \u2022 To hide sensitive columns from users. \u2022 To show only specific rows/columns from a table. \u2022 To reuse common query logic across your app or reports. Creating a View Let\u2019s say you have an employees table with lots of details, but you only want to show public employee info (name, department, and salary). CREATE VIEW public_employees AS SELECT name, department, salary FROM employees; You\u2019re telling MySQL: \u201cCreate a view called public_employees that shows only name, department, and salary from the employees table.\u201d"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 53,
+            "text": "Using a View Now you can query it like a normal table: SELECT * FROM public_employees; Or even apply filters: SELECT * FROM public_employees WHERE department = 'IT'; Updating a View You can replace a view like this: CREATE OR REPLACE VIEW public_employees AS SELECT name, department FROM employees; Dropping (Deleting) a View DROP VIEW public_employees; This removes the view from the database. Notes \u2022 Views don\u2019t store data. If the underlying table changes, the view reflects that automatically."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 54,
+            "text": "\u2022 Not all views are updatable. Simple views usually are (like those selecting from one table without grouping or joins), but complex ones may not allow INSERT , UPDATE , or DELETE . \u2022 Views can make your queries cleaner and easier to maintain. Example Use Case You have this query used 5 times across your app: SELECT customer_id, name, total_orders, status FROM customers WHERE status = 'active' AND total_orders > 5; Instead of repeating it, just create a view: CREATE VIEW top_customers AS SELECT customer_id, name, total_orders, status FROM customers WHERE status = 'active' AND total_orders > 5; Now just do: SELECT * FROM top_customers;"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 55,
+            "text": "MySQL Indexes An index in MySQL is a data structure that makes data retrieval faster\u2014especially when you\u2019re using WHERE , JOIN , ORDER BY , or searching large tables. Think of an index like the index in a book: instead of reading every page, MySQL uses the index to jump straight to the relevant row(s). Why Use Indexes? \u2022 Speed up queries that search, filter, or sort data. \u2022 Improve performance for frequent lookups or joins. \u2022 Enhance scalability of your database over time. How to Create an Index 1. Single Column Index CREATE INDEX idx_email ON users(email); You\u2019re telling MySQL: \u201cCreate a quick lookup structure for the email column in the users table.\u201d 2. Multi-column (Composite) Index CREATE INDEX idx_name_city ON users(name, city); This is useful when your query filters on both name and city in that specific order."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 56,
+            "text": "How to Delete (Drop) an Index DROP INDEX idx_email ON users; You\u2019re saying: \u201cRemove the index named idx_email from the users table.\u201d When to Use Indexes Use indexes when: \u2022 A column is often used in WHERE , JOIN , or ORDER BY clauses. \u2022 You\u2019re searching by unique fields like email , username , or ID . \u2022 You\u2019re filtering large tables for specific values regularly. \u2022 You want to improve performance of lookups and joins. When Not to Use Indexes Avoid adding indexes when: \u2022 The table is small (MySQL can scan it quickly anyway). \u2022 The column is rarely used in searches or filtering. \u2022 You\u2019re indexing a column with very few unique values (like a gender field with just 'M' and 'F' ). \u2022 You\u2019re inserting or updating very frequently\u2014indexes can slow down writes because they also need to be updated. Viewing Existing Indexes To list all indexes on a table: SHOW INDEX FROM users;"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 57,
+            "text": "Summary Action Syntax Example Create index CREATE INDEX idx_name ON table(column); Delete index DROP INDEX idx_name ON table; List indexes SHOW INDEX FROM table; Indexes are essential for performance, but overusing them or indexing the wrong columns can actually hurt performance. Use them wisely based on how your data is queried."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 58,
+            "text": "Subqueries in MySQL A subquery is a query nested inside another SQL query. It helps you perform complex filtering, calculations, or temporary data shaping by breaking down the logic into smaller steps. You can use subqueries in SELECT , FROM , or WHERE clauses. What is a Subquery? A subquery is enclosed in parentheses and returns data to be used by the outer query. It can return: - A single value (scalar) - A row - A full table Subquery in the WHERE Clause Example: Employees who earn more than average SELECT name, salary FROM employees WHERE salary > ( SELECT AVG(salary) FROM employees ); We are telling MySQL: \u201cFirst calculate the average salary, then return employees with salaries greater than that.\u201d"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 59,
+            "text": "Subquery in the FROM Clause Example: Department-wise average salary above 50,000 SELECT department, avg_salary FROM ( SELECT department, AVG(salary) AS avg_salary FROM employees GROUP BY department ) AS dept_avg WHERE avg_salary > 50000; We are telling MySQL: \u201cCreate a temporary table of average salaries by department, then filter departments where the average is above 50,000.\u201d Subquery in the SELECT Clause Example: Count of projects per employee SELECT name, (SELECT COUNT(*) FROM projects WHERE projects.employee_id = employees.id) AS project_count FROM employees; This gives each employee along with the number of projects they are assigned to. Correlated Subqueries A correlated subquery depends on the outer query. It runs once for each row in the outer query."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 60,
+            "text": "Example: Employee earning more than department\u2019s average SELECT name, department, salary FROM employees e WHERE salary > ( SELECT AVG(salary) FROM employees WHERE department = e.department ); We are telling MySQL: \u201cFor each employee, compare their salary with the average salary of their department.\u201d Types of Subqueries Type Description Scalar Subquery Returns a single value Row Subquery Returns one row with multiple columns Table Subquery Returns multiple rows and columns Correlated Subquery Refers to the outer query inside the subquery When to Use Subqueries \u2022 When your logic depends on calculated values (like averages or counts) \u2022 When you need to filter based on dynamic conditions \u2022 When you\u2019re breaking down complex queries for readability"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 61,
+            "text": "When to Avoid Subqueries \u2022 When the same result can be achieved with a JOIN, which is often faster \u2022 When the subquery is being executed repeatedly for every row (correlated subqueries on large tables) Summary Clause Use Case WHERE Filter based on the result of a subquery FROM Use a subquery as a derived table SELECT Add related calculations inline Subqueries are powerful for solving multi-step problems and isolating logic, but be mindful of performance when working with large data sets."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 62,
+            "text": "GROUP BY in MySQL The GROUP BY clause is used when you want to group rows that have the same values in specified columns. It\u2019s usually combined with aggregate functions like COUNT() , SUM() , AVG() , MAX() , or MIN() . We are telling MySQL: \u201cGroup these rows together by this column, and then apply an aggregate function to each group.\u201d Example: Count of employees in each department SELECT department, COUNT(*) AS total_employees FROM employees GROUP BY department; Here, we\u2019re grouping all employees by their department and counting how many are in each group. Example: Average salary per department SELECT department, AVG(salary) AS avg_salary FROM employees GROUP BY department; We are telling MySQL: \u201cGroup the data by department, then calculate the average salary for each group.\u201d"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 63,
+            "text": "Using GROUP BY with Multiple Columns You can group by more than one column to get more detailed groupings. Example: Count by department and job title SELECT department, job_title, COUNT(*) AS count FROM employees GROUP BY department, job_title; This will count how many employees hold each job title within each department. The HAVING Clause Once you\u2019ve grouped data using GROUP BY , you might want to filter the groups themselves based on the result of an aggregate function. This is where HAVING comes in. HAVING is like WHERE , but it works after the grouping is done. Example: Departments with more than 5 employees SELECT department, COUNT(*) AS total FROM employees GROUP BY department HAVING COUNT(*) > 5; We are telling MySQL: \u201cFirst group employees by department, then only show those departments where the total number is greater than 5.\u201d"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 64,
+            "text": "Difference Between WHERE and HAVING Clause Used For Example Use WHERE Filters rows before grouping WHERE salary > 50000 HAVIN HAVING AVG(salary) > Filters groups after grouping G 60000 You can also use both together: SELECT department, AVG(salary) AS avg_salary FROM employees WHERE status = 'active' GROUP BY department HAVING AVG(salary) > 60000; Here\u2019s what\u2019s happening: 1. WHERE filters only the active employees. 2. GROUP BY groups them by department. 3. HAVING filters out departments with low average salary. Using WITH ROLLUP in MySQL The WITH ROLLUP clause in MySQL is used with GROUP BY to add summary rows (totals and subtotals) to your result set. Summary Keyword Role GROUP BY Groups rows with same values into summary rows HAVING Filters groups based on aggregate results"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 65,
+            "text": "Use GROUP BY when you want to aggregate data. Use HAVING when you want to filter those aggregated groups."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 66,
+            "text": "Stored Procedures in MySQL A Stored Procedure is a saved block of SQL code that you can execute later by calling its name. It allows you to group SQL statements and reuse them\u2014just like a function in programming. Why Use Stored Procedures? \u2022 To avoid repeating the same SQL logic in multiple places \u2022 To improve performance by reducing network traffic \u2022 To encapsulate complex business logic inside the database Creating a Stored Procedure When you create a stored procedure, you need to temporarily change the SQL statement delimiter from ; to something else like // or $$ . Why change the DELIMITER ? MySQL ends a command at the first ; . Since stored procedures contain multiple SQL statements (each ending in ; ), we need to tell MySQL not to end the procedure too early. So we temporarily change the delimiter to something else\u2014then switch it back."
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 67,
+            "text": "Example: Simple Procedure to List All Employees DELIMITER // CREATE PROCEDURE list_employees() BEGIN SELECT * FROM employees; END // DELIMITER ; This creates a procedure named list_employees . Calling a Stored Procedure You use the CALL statement: CALL list_employees(); Stored Procedure with Parameters You can pass values into procedures using the IN keyword. Example: Get details of an employee by ID DELIMITER // CREATE PROCEDURE get_employee_by_id(IN emp_id INT) BEGIN SELECT * FROM employees WHERE id = emp_id; END //"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 68,
+            "text": "DELIMITER ; Here, IN emp_id INT means: \u201cTake an integer input called emp_id when this procedure is called.\u201d Call it like this: CALL get_employee_by_id(3); Dropping a Stored Procedure To delete a stored procedure: DROP PROCEDURE IF EXISTS get_employee_by_id; This ensures it doesn\u2019t throw an error if the procedure doesn\u2019t exist. Summary Task SQL Command Create Procedure CREATE PROCEDURE Change Delimiter DELIMITER // (or any unique symbol) Call a Procedure CALL procedure_name(); With Input Parameter IN param_name data_type Drop a Procedure DROP PROCEDURE IF EXISTS procedure_name;"
+        },
+        {
+            "source": "sqlhandbook.pdf",
+            "page_number": 69,
+            "text": "Best Practices \u2022 Always give clear names to procedures. \u2022 Use IN , OUT , or INOUT for flexible parameter handling. \u2022 Keep business logic in the database only if it improves clarity or performance."
+        }
+    ]
+}

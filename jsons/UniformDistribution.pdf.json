@@ -1,0 +1,19 @@
+{
+    "chunks": [
+        {
+            "source": "UniformDistribution.pdf",
+            "page_number": 1,
+            "text": "Uniform Distribution What It Is: A uniform distribution is when every outcome is equally likely. Simple Example: Rolling a Fair Die \u2022 Possible outcomes: {1, 2, 3, 4, 5, 6} \u2022 Each number has a 1/6 chance \u2192 That\u2019s a discrete uniform distribution Continuous Version: Let\u2019s say we randomly pick a number between 0 and 1. \u2022 Every value in that range is equally likely. \u2022 That\u2019s a continuous uniform distribution. Graphs to Visualize 1. Discrete Uniform (like a die roll) Outcome: 1 2 3 4 5 6 Probability:|---|---|---|---|---|---| 1/6 for each \u2192 flat bars"
+        },
+        {
+            "source": "UniformDistribution.pdf",
+            "page_number": 2,
+            "text": "Discrete Uniform Distribution Formula: P(X = x) = 1 / n \u2022 Where n is the number of possible outcomes (e.g., for a 6-sided die, P(rolling a 4) = 1/6) 2. Continuous Uniform (0 to 1) \u2022 It\u2019s just a flat horizontal line from x = 0 to x = 1 \u2022 The probability density is constant (say 1.0) across that interval Continuous Uniform Distribution Formula: f(x) = 1 / (b - a) for values between a and b \u2022 Outside the range a to b , the probability is 0 Why It\u2019s Useful in Data Science \u2022 It models pure randomness \u2022 It\u2019s used to simulate random choices \u2022 Used in: \u2022 Generating random numbers ( np.random.uniform ) \u2022 Monte Carlo simulations \u2022 Bootstrapping In Code (Python): import numpy as np import matplotlib.pyplot as plt"
+        },
+        {
+            "source": "UniformDistribution.pdf",
+            "page_number": 3,
+            "text": "# Continuous uniform from 0 to 1 samples = np.random.uniform(0, 1, 10000) plt.hist(samples, bins=50, density=True, alpha=0.6, color='skyblue') plt.title(\"Continuous Uniform Distribution (0 to 1)\") plt.xlabel(\"Value\") plt.ylabel(\"Probability Density\") plt.grid(True) plt.show() You\u2019ll see a flat histogram showing uniform probability. Summary: Property Uniform Distribution Type Discrete or Continuous Shape Flat Real-world example Die roll, random number gen Python function np.random.uniform(a, b)"
+        }
+    ]
+}

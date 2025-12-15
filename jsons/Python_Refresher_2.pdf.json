@@ -1,0 +1,234 @@
+{
+    "chunks": [
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 1,
+            "text": "Python Refresher Why choose Python In this section, we will learn why Python is a popular and powerful choice for data science. Variables, Data Types, and Typecasting In this section, we will learn about variables, data types, and typecasting in Python to store and convert data effectively. ## Variables \u2022 Containers for storing data values. \u2022 No need to declare data type explicitly. name = \"Alice\" age = 25 is_student = True Data Types Type Example Description int 10 , -5 Integer numbers float 3.14 , -0.5 Decimal numbers str \"hello\" Text (string) bool True , False Boolean values list [1, 2, 3] Ordered, mutable collection tuple (1, 2, 3) Ordered, immutable collection"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 2,
+            "text": "Type Example Description dict {\"a\": 1} Key-value pairs Typecasting (Type Conversion) \u2022 Convert data from one type to another using built-in functions: # str to int x = int(\"10\") # 10 # int to str y = str(25) # \"25\" # float to int z = int(3.9) # 3 (truncates, not rounds) # list from string lst = list(\"abc\") # ['a', 'b', 'c'] Quick Tips \u2022 Use type(variable) to check a variable\u2019s data type. \u2022 Typecasting errors can happen if the value isn\u2019t compatible: int(\"hello\") # ValueError String and String Methods In this section, we will learn about strings and string methods in Python to work with and manipulate text data."
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 3,
+            "text": "What is a String? \u2022 A string is a sequence of characters enclosed in single ( ' ) or double ( \" ) quotes. name = \"Alice\" greeting = 'Hello' Multiline Strings \u2022 Use triple quotes ( ''' or \"\"\" ) for multiline text. message = \"\"\"This is a multiline string.\"\"\" String Indexing and Slicing \u2022 Indexing starts at 0. text = \"Python\" text[0] # 'P' text[-1] # 'n' (last character) text[0:2] # 'Py' text[:3] # 'Pyt' text[3:] # 'hon' String Immutability \u2022 Strings cannot be changed after creation. text[0] = 'J' # Error"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 4,
+            "text": "Common String Methods Method Description str.lower() Converts to lowercase str.upper() Converts to uppercase str.strip() Removes leading/trailing spaces str.replace(old, new) Replaces substring str.split(sep) Splits string into a list str.join(list) Joins list into string str.find(sub) Returns index of first occurrence str.count(sub) Counts occurrences of substring str.startswith(prefix) Checks if string starts with value str.endswith(suffix) Checks if string ends with value str.isdigit() Checks if all chars are digits str.isalpha() Checks if all chars are letters str.isalnum() Checks if all chars are letters/digits Examples \"hello\".upper() # 'HELLO' \" Hello \".strip() # 'Hello' \"hello world\".split() # ['hello', 'world'] \"-\".join([\"2025\", \"04\", \"14\"]) # '2025-04-14' \"python\".find(\"th\") # 2"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 5,
+            "text": "String Formatting (f-strings) name = \"Alice\" age = 30 f\"Hello, {name}. You are {age} years old.\" # 'Hello, Alice. You are 30 years old.' Operators in Python In this section, we will learn about different types of operators in Python and how they are used in expressions. ## 1. Arithmetic Operators Used for basic mathematical operations. Operator Description Example ( a=10, b=5 ) + Addition a + b # 15 - Subtraction a - b # 5 * Multiplication a * b # 50 / Division a / b # 2.0 // Floor Division a // b # 2 % Modulus a % b # 0 ** Exponentiation a ** b # 100000 2. Comparison Operators Compare values and return True or False . Operator Description Example ( a=10, b=5 ) == Equal to a == b # False != Not equal to a != b # True"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 6,
+            "text": "Operator Description Example ( a=10, b=5 ) > Greater than a > b # True < Less than a < b # False >= Greater or equal a >= b # True <= Less or equal a <= b # False 3. Logical Operators Used to combine conditional statements. Operator Description Example ( x=True, y=False ) and Both True x and y # False or Either True x or y # True not Negation not x # False 4. Bitwise Operators Perform bit-level operations. Operator Description Example ( a=5, b=3 ) & AND a & b # 1 \\| OR a \\| b # 7 5. Assignment Operators Used to assign values to variables. Operator Example ( a=10 ) Equivalent to = a = 5 a = 5"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 7,
+            "text": "Operator Example ( a=10 ) Equivalent to += a += 5 a = a + 5 -= a -= 5 a = a - 5 *= a *= 5 a = a * 5 /= a /= 5 a = a / 5 //= a //= 5 a = a // 5 %= a %= 5 a = a % 5 **= a **= 5 a = a ** 5 6. Membership & Identity Operators Check for presence and object identity. Operator Description Example ( lst=[1,2,3] , x=2 ) in Present in sequence x in lst # True not in Not present x not in lst # False is Same object a is b # False is not Different object a is not b # True Taking input from the user In this section, we will learn how to take input from the user in Python and use it in our programs. ## Basic Usage name = input(\"Enter your name: \") print(\"Hello\", name) Note: input() always returns a string."
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 8,
+            "text": "Type Conversion You can always convert the string output of input() function to other supported data types age = int(input(\"Enter your age: \")) price = float(input(\"Enter the price: \")) Operator Precedence Python follows PEMDAS (Parentheses, Exponents, Multiplication/Division, Addition/ Subtraction). The order of operations in Python is: 1. Parentheses () \u2013 Highest precedence, operations inside parentheses are evaluated first. 2. Exponents ** \u2013 Power calculations (e.g., 2 ** 3 \u2192 8). 3. Multiplication * , Division / , Floor Division // , Modulus % \u2013 Evaluated from left to right. 4. Addition + , Subtraction - \u2013 Evaluated from left to right. Example: result = 10 + 2 * 3 # Multiplication happens first: 10 + (2 * 3) = 16 print(result) result = (10 + 2) * 3 # Parentheses first: (10 + 2) * 3 = 36 print(result) result = 2 ** 3 ** 2 # Right-to-left exponentiation: 2 ** (3 ** 2) = 2 ** 9 = 512 print(result) If else statements In Python, conditional statements ( if , elif , and else ) are used to control the flow of a program based on conditions. These are essential in data science for"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 9,
+            "text": "handling different scenarios in data processing, decision-making, and logic execution. Basic if Statement The if statement allows you to execute a block of code only if a condition is True . x = 10 if x > 5: print(\"x is greater than 5\") Explanation: \u2022 The condition x > 5 is checked. \u2022 If True , the indented block under if runs. \u2022 If False , nothing happens. if-else Statement The else block executes when the if condition is False . x = 3 if x > 5: print(\"x is greater than 5\") else: print(\"x is not greater than 5\") Explanation: \u2022 If x > 5 , it prints the first message. \u2022 Otherwise, the else block executes."
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 10,
+            "text": "if-elif-else Statement When multiple conditions need to be checked sequentially, use elif (short for \u201celse if\u201d). x = 5 if x > 10: print(\"x is greater than 10\") elif x > 5: print(\"x is greater than 5 but not more than 10\") elif x == 5: print(\"x is exactly 5\") else: print(\"x is less than 5\") Explanation: \u2022 The conditions are checked from top to bottom. \u2022 The first True condition executes, and the rest are skipped. Using if-else in Data Science Conditional statements are widely used in data science for filtering, cleaning, and decision-making. Example: Categorizing Data age = 25 if age < 18: category = \"Minor\" elif age < 65: category = \"Adult\" else: category = \"Senior Citizen\" print(\"Category:\", category)"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 11,
+            "text": "Example: Applying Conditions on Pandas DataFrame import pandas as pd data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Score': [85, 40, 75]} df = pd.DataFrame(data) df['Result'] = df['Score'].apply(lambda x: 'Pass' if x >= 50 else 'Fail') print(df) Summary \u2022 if : Executes if the condition is True . \u2022 if-else : Adds an alternative block if the condition is False . \u2022 if-elif-else : Handles multiple conditions. \u2022 Useful in data science for logic-based decision-making. Match Case Statements The match-case statement, introduced in Python 3.10, provides pattern matching similar to switch statements in other languages. Syntax def http_status(code): match code: case 200: return \"OK\" case 400: return \"Bad Request\" case 404: return \"Not Found\" case 500: return \"Internal Server Error\" case _:"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 12,
+            "text": "return \"Unknown Status\" print(http_status(200)) # Output: OK print(http_status(404)) # Output: Not Found Features: \u2022 The _ (underscore) acts as a default case. \u2022 Patterns can include literals, variable bindings, and even structural patterns. Example: Matching Data Structures Lets try to match a tuple using Match-Case statements point = (3, 4) match point: case (0, 0): print(\"Origin\") case (x, 0): print(f\"X-Axis at {x}\") case (0, y): print(f\"Y-Axis at {y}\") case (x, y): print(f\"Point at ({x}, {y})\") String Formatting and F-Strings String is arguably the most used immutable data types in Python. Python provides multiple ways to format strings, including the format() method and f-strings (introduced in Python 3.6)."
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 13,
+            "text": "1. Using format() name = \"Alice\" age = 25 print(\"My name is {} and I am {} years old.\".format(name, age)) # Output: My name is Alice and I am 25 years old. Positional and Keyword Arguments print(\"{0} is learning {1}\".format(\"Alice\", \"Python\")) # Using positions print(\"{name} is learning {language}\".format(name=\"Alice\", language=\"Python\")) 2. Using f-Strings (Recommended) F-strings provide a cleaner and more readable way to format strings. name = \"Alice\" age = 25 print(f\"My name is {name} and I am {age} years old.\") # Output: My name is Alice and I am 25 years old. Expressions Inside f-Strings a = 5 b = 10 print(f\"Sum of {a} and {b} is {a + b}\") # Output: Sum of 5 and 10 is 15 Formatting Numbers pi = 3.14159 print(f\"Pi rounded to 2 decimal places: {pi:.2f}\") # Output: Pi rounded to 2 decimal places: 3.14"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 14,
+            "text": "Padding and Alignment print(f\"{'Python':<10}\") # Left-align print(f\"{'Python':>10}\") # Right-align print(f\"{'Python':^10}\") # Center-align :<10 \u2192 The < symbol means left-align the text within a total width of 10 characters. F-strings are the most efficient and recommended way to format strings in modern Python! Loops in Python Python has two main loops: for and while . 1. For Loop Used to iterate over sequences like lists, tuples, and strings. fruits = [\"apple\", \"banana\", \"cherry\"] for fruit in fruits: print(fruit) Using range() for i in range(3): print(i) # Output: 0, 1, 2 2. While Loop Runs as long as a condition is True . count = 0 while count < 3:"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 15,
+            "text": "print(count) count += 1 Output: 0 1 2 3. Loop Control Statements \u2022 break \u2192 Exits the loop. \u2022 continue \u2192 Skips to the next iteration. \u2022 pass \u2192 Does nothing (used as a placeholder). for i in range(5): if i == 3: break # Stops the loop at 3 print(i) List and List Methods A list in Python is an ordered, mutable collection of elements. It can contain elements of different types. Creating a List: # Empty list my_list = [] # List with elements numbers = [1, 2, 3, 4, 5]"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 16,
+            "text": "# Mixed data types mixed_list = [1, \"Hello\", 3.14, True] Common List Methods Method Description Example Adds an element x to the append(x) my_list.append(10) end of the list. Extends the list by appending my_list.extend([6, extend(iterable) all elements from an iterable. 7, 8]) Inserts x at the specified my_list.insert(2, insert(index, x) index . \"Python\") Removes the first occurrence remove(x) my_list.remove(3) of x in the list. Removes and returns the element at index (last pop([index]) my_list.pop(2) element if index is not provided). Returns the index of the first index(x) my_list.index(4) occurrence of x . Returns the number of times count(x) my_list.count(2) x appears in the list. Sorts the list in ascending sort() my_list.sort() order. reverse() Reverses the order of the list. my_list.reverse() Returns a shallow copy of the new_list = copy() list. my_list.copy() Removes all elements from clear() my_list.clear() the list."
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 17,
+            "text": "Example Usage: fruits = [\"apple\", \"banana\", \"cherry\"] fruits.append(\"orange\") print(fruits) # ['apple', 'banana', 'cherry', 'orange'] fruits.sort() print(fruits) # ['apple', 'banana', 'cherry', 'orange'] Tuples and Tuple Methods A tuple in Python is an ordered, immutable collection of elements. It is similar to a list, but once created, its elements cannot be modified. Creating a Tuple: # Empty tuple empty_tuple = () # Tuple with elements numbers = (1, 2, 3, 4, 5) # Mixed data types mixed_tuple = (1, \"Hello\", 3.14, True) # Single element tuple (comma is necessary) single_element = (42,) Common Tuple Methods Method Description Example Returns the number of times count(x) my_tuple.count(2) x appears in the tuple. index(x) my_tuple.index(3)"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 18,
+            "text": "Method Description Example Returns the index of the first occurrence of x . Tuple Characteristics \u2022 Immutable: Once created, elements cannot be changed. \u2022 Faster than lists: Accessing elements in a tuple is faster than in a list. \u2022 Can be used as dictionary keys: Since tuples are immutable, they can be used as keys in dictionaries. Accessing Tuple Elements my_tuple = (10, 20, 30, 40) # Indexing print(my_tuple[1]) # 20 # Slicing print(my_tuple[1:3]) # (20, 30) Tuple Packing and Unpacking # Packing person = (\"Alice\", 25, \"Engineer\") # Unpacking name, age, profession = person print(name) # Alice print(age) # 25"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 19,
+            "text": "When to Use Tuples? \u2022 When you want an unchangeable collection of elements. \u2022 When you need a faster alternative to lists. \u2022 When storing heterogeneous data (e.g., database records, coordinates). Set and Set Methods A set in Python is an unordered, mutable, and unique collection of elements. It does not allow duplicate values. Creating a Set: # Empty set (must use set(), not {}) empty_set = set() # Set with elements numbers = {1, 2, 3, 4, 5} # Mixed data types mixed_set = {1, \"Hello\", 3.14, True} # Creating a set from a list unique_numbers = set([1, 2, 2, 3, 4, 4, 5]) print(unique_numbers) # {1, 2, 3, 4, 5} Common Set Methods Method Description Example add(x) Adds an element x to the set. my_set.add(10) Adds multiple elements from my_set.update([6, update(iterable) an iterable. 7, 8]) Removes x from the set remove(x) my_set.remove(3) (raises an error if not found)."
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 20,
+            "text": "Method Description Example Removes x from the set (does discard(x) my_set.discard(3) not raise an error if not found). Removes and returns a random pop() my_set.pop() element. Removes all elements from the clear() my_set.clear() set. Returns a shallow copy of the new_set = copy() set. my_set.copy() Set Operations Operation Description Example Returns a new set with all union(set2) unique set1.union(set2) elements from both sets. Returns a set with intersection(set2) elements set1.intersection(set2) common to both sets. Returns a set with elements in difference(set2) set1.difference(set2) set1 but not in set2 . symmetric_difference(set2) set1.symmetric_difference(set2)"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 21,
+            "text": "Operation Description Example Returns a set with elements in either set1 or set2 , but not both. Returns True if issubset(set2) set1 is a set1.issubset(set2) subset of set2 . Returns True if issuperset(set2) set1 is a set1.issuperset(set2) superset of set2 . Example Usage: In Python, sets support intuitive operators for common operations like union ( | ), intersection ( & ), difference ( - ), and symmetric difference ( ^ ). These have equivalent method forms too, like .union() , .intersection() , etc. Here\u2019s a quick example: set1 = {1, 2, 3, 4} set2 = {3, 4, 5, 6} # Union \u2013 combines all unique elements print(set1 | set2) # {1, 2, 3, 4, 5, 6} print(set1.union(set2)) # same result # Intersection \u2013 common elements print(set1 & set2) # {3, 4}"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 22,
+            "text": "print(set1.intersection(set2))# same result # Difference \u2013 in set1 but not in set2 print(set1 - set2) # {1, 2} print(set1.difference(set2)) # same result # Symmetric Difference \u2013 in either set, but not both print(set1 ^ set2) # {1, 2, 5, 6} print(set1.symmetric_difference(set2))# same result Key Properties of Sets: \u2022 Unordered: No indexing or slicing. \u2022 Unique Elements: Duplicates are automatically removed. \u2022 Mutable: You can add or remove elements. Dictionary and Dictionary Methods A dictionary in Python is an unordered, mutable, and key-value pair collection. It allows efficient data retrieval and modification. Dictionaries in Python are ordered as of Python 3.7 Creating a Dictionary: # Empty dictionary empty_dict = {} # Dictionary with key-value pairs student = { \"name\": \"Alice\", \"age\": 25, \"grade\": \"A\" } # Using dict() constructor person = dict(name=\"John\", age=30, city=\"New York\")"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 23,
+            "text": "Accessing Dictionary Elements # Using keys print(student[\"name\"]) # Alice # Using get() (avoids KeyError if key doesn't exist) print(student.get(\"age\")) # 25 print(student.get(\"height\", \"Not Found\")) # Default value Common Dictionary Methods Method Description Example Returns all keys in the keys() student.keys() dictionary. Returns all values in values() student.values() the dictionary. Returns key-value pairs items() student.items() as tuples. Returns value for key , get(key, or default if key not student.get(\"age\", 0) default) found. Merges dict2 into student.update({\"age\": update(dict2) the dictionary. 26}) Removes key and pop(key, returns its value (or student.pop(\"grade\") default) default if key not found). Removes and returns popitem() the last inserted key- student.popitem() value pair."
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 24,
+            "text": "Method Description Example Returns value for key , setdefault(key, student.setdefault(\"city\", else sets it to default) \"Unknown\") default . Removes all items from clear() student.clear() the dictionary. Returns a shallow copy copy() new_dict = student.copy() of the dictionary. Example Usage: student = {\"name\": \"Alice\", \"age\": 25, \"grade\": \"A\"} # Adding a new key-value pair student[\"city\"] = \"New York\" # Updating an existing value student[\"age\"] = 26 # Removing an item student.pop(\"grade\") # Iterating over a dictionary for key, value in student.items(): print(key, \":\", value) # Output: # name : Alice # age : 26 # city : New York"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 25,
+            "text": "Dictionary Comprehension: # Creating a dictionary using comprehension squares = {x: x**2 for x in range(1, 6)} print(squares) # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25} Key Properties of Dictionaries: \u2022 Unordered (Python 3.6+ maintains insertion order). \u2022 Keys must be unique and immutable (e.g., strings, numbers, tuples). \u2022 Values can be mutable and of any type. File Handling in Python File handling allows Python programs to read, write, and manipulate files stored on disk. Python provides built-in functions for working with files. Opening a File Python uses the open() function to open a file. Syntax file = open(\"filename\", mode) \u2022 filename \u2192 The name of the file to open. \u2022 mode \u2192 Specifies how the file should be opened. File Modes Mode Description Read (default) \u2013 Opens file for reading, raises an 'r' error if file does not exist."
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 26,
+            "text": "Mode Description Write \u2013 Opens file for writing, creates a new file if 'w' not found, and overwrites existing content. Append \u2013 Opens file for writing, creates a new file if 'a' not found, and appends content instead of overwriting. Create \u2013 Creates a new file, but fails if the file 'x' already exists. Binary mode \u2013 Used with rb , wb , ab , etc., for 'b' working with non-text files (e.g., images, PDFs). Text mode (default) \u2013 Used for text files (e.g., rt , 't' wt ). Reading Files Using read() \u2013 Read Entire File file = open(\"example.txt\", \"r\") content = file.read() print(content) file.close() # Always close the file after use Using readline() \u2013 Read Line by Line file = open(\"example.txt\", \"r\") line1 = file.readline() # Reads first line print(line1) file.close()"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 27,
+            "text": "Using readlines() \u2013 Read All Lines as List file = open(\"example.txt\", \"r\") lines = file.readlines() # Reads all lines into a list print(lines) file.close() Writing to Files Using write() \u2013 Overwrites Existing Content file = open(\"example.txt\", \"w\") # Opens file in write mode file.write(\"Hello, World!\") # Writes content file.close() Using writelines() \u2013 Write Multiple Lines lines = [\"Hello\\n\", \"Welcome to Python\\n\", \"File Handling\\n\"] file = open(\"example.txt\", \"w\") file.writelines(lines) # Writes multiple lines file.close() Appending to a File The a (append) mode is used to add content to an existing file without erasing previous data. file = open(\"example.txt\", \"a\") file.write(\"\\nThis is an additional line.\") file.close()"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 28,
+            "text": "Using with Statement (Best Practice) Using with open() ensures the file is automatically closed after execution. with open(\"example.txt\", \"r\") as file: content = file.read() print(content) # No need to manually close the file Checking if a File Exists Use the os module to check if a file exists before opening it. import os if os.path.exists(\"example.txt\"): print(\"File exists!\") else: print(\"File not found!\") Deleting a File Use the os module to delete a file. import os if os.path.exists(\"example.txt\"): os.remove(\"example.txt\") print(\"File deleted.\") else: print(\"File does not exist.\")"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 29,
+            "text": "Working with Binary Files Binary files ( .jpg , .png , .pdf , etc.) should be opened in binary mode ( 'b' ). Reading a Binary File with open(\"image.jpg\", \"rb\") as file: data = file.read() print(data) # Outputs binary content Writing to a Binary File with open(\"new_image.jpg\", \"wb\") as file: file.write(data) # Writes binary content to a new file Summary of File Operations Operation Description Example file = open(\"example.txt\", Open file Open a file \"r\") Read file Read all content file.read() Read line Read one line file.readline() Read lines Read all lines into list file.readlines() Write content Write file file.write(\"Hello\") (overwrite) Add content to the Append file file.write(\"\\nMore text\") end os.path.exists(\"file.txt\")"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 30,
+            "text": "Operation Description Example Check file Check before existence opening/deleting Delete file Remove a file os.remove(\"file.txt\") JSON module in Python JSON (JavaScript Object Notation) is a lightweight data format used for data exchange between servers and applications. It is widely used in APIs, web applications, and configurations. Python provides the json module to work with JSON data. You can import the json module like this: import json Converting Python Objects to JSON (Serialization) Serialization (also called encoding or dumping) is converting a Python object into a JSON-formatted string. json.dumps() \u2013 Convert Python object to JSON string import json data = {\"name\": \"Alice\", \"age\": 25, \"city\": \"New York\"} json_string = json.dumps(data) print(json_string) # Output: {\"name\": \"Alice\", \"age\": 25, \"city\": \"New York\"} print(type(json_string)) # <class 'str'>"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 31,
+            "text": "json.dump() \u2013 Write JSON data to a file with open(\"data.json\", \"w\") as file: json.dump(data, file) Converting JSON to Python Objects (Deserialization) Deserialization (also called decoding or loading) is converting JSON-formatted data into Python objects. json.loads() \u2013 Convert JSON string to Python object json_data = '{\"name\": \"Alice\", \"age\": 25, \"city\": \"New York\"}' python_obj = json.loads(json_data) print(python_obj) # Output: {'name': 'Alice', 'age': 25, 'city': 'New York'} print(type(python_obj)) # <class 'dict'> json.load() \u2013 Read JSON data from a file with open(\"data.json\", \"r\") as file: python_data = json.load(file) print(python_data) # Output: {'name': 'Alice', 'age': 25, 'city': 'New York'} Formatting JSON Output You can format JSON for better readability using indentation. formatted_json = json.dumps(data, indent=4) print(formatted_json)"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 32,
+            "text": "Output: { \"name\": \"Alice\", \"age\": 25, \"city\": \"New York\" } Summary of Common JSON Methods Method Description Example Converts Python json.dumps(obj) object to JSON json.dumps(data) string Writes JSON to a json.dump(obj, file) json.dump(data, file) file Converts JSON json.loads(json_string) string to Python json.loads(json_data) object Reads JSON from json.load(file) json.load(file) a file Object Oriented Programming in Python Object-Oriented Programming (OOP) is a programming paradigm that organizes code into objects that contain both data (attributes) and behavior (methods). Key Concepts of OOP Concept Description Class A blueprint for creating objects."
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 33,
+            "text": "Concept Description Object An instance of a class with specific data and behavior. Attributes Variables that store data for an object. Methods Functions inside a class that define object behavior. Encapsulation Restricting direct access to an object\u2019s data. Inheritance Creating a new class from an existing class. Polymorphism Using the same method name for different classes. 1. Defining a Class and Creating an Object Creating a Class class Car: def __init__(self, brand, model): self.brand = brand # Attribute self.model = model # Attribute def display_info(self): # Method return f\"{self.brand} {self.model}\" # Creating an Object (Instance) car1 = Car(\"Toyota\", \"Camry\") print(car1.display_info()) # Output: Toyota Camry 2. Encapsulation (Data Hiding) Encapsulation prevents direct modification of attributes and allows controlled access using getter and setter methods."
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 34,
+            "text": "class BankAccount: def __init__(self, balance): self.__balance = balance # Private Attribute def get_balance(self): # Getter return self.__balance def deposit(self, amount): # Setter if amount > 0: self.__balance += amount # Using Encapsulation account = BankAccount(1000) account.deposit(500) print(account.get_balance()) # Output: 1500 \ud83d\udd39 Why use encapsulation? It protects data by restricting direct modification. 3. Inheritance (Reusing Code) Inheritance allows a class (child) to inherit attributes and methods from another class (parent). Example of Single Inheritance class Animal: def speak(self): return \"Animal makes a sound\" class Dog(Animal): # Inheriting from Animal def speak(self): return \"Bark\" dog = Dog() print(dog.speak()) # Output: Bark"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 35,
+            "text": "\ud83d\udd39 Why use inheritance? It promotes code reusability and maintains a cleaner code structure. 4. Multiple Inheritance A class can inherit from multiple parent classes. class A: def method_a(self): return \"Method A\" class B: def method_b(self): return \"Method B\" class C(A, B): # Multiple Inheritance pass obj = C() print(obj.method_a()) # Output: Method A print(obj.method_b()) # Output: Method B \ud83d\udd39 Why use multiple inheritance? It allows a class to inherit features from multiple parent classes. 5. Polymorphism (Same Method, Different Behavior) Polymorphism allows different classes to use the same method name. Method Overriding Example class Bird: def fly(self): return \"Birds can fly\""
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 36,
+            "text": "class Penguin(Bird): def fly(self): return \"Penguins cannot fly\" bird = Bird() penguin = Penguin() print(bird.fly()) # Output: Birds can fly print(penguin.fly()) # Output: Penguins cannot fly \ud83d\udd39 Why use polymorphism? It provides flexibility by allowing different classes to define the same method differently. 6. Abstraction (Hiding Implementation Details) Abstraction is used to define a method without implementing it in the base class. It is achieved using abstract base classes ( ABC module). from abc import ABC, abstractmethod class Shape(ABC): @abstractmethod def area(self): pass # No implementation class Square(Shape): def __init__(self, side): self.side = side def area(self): return self.side * self.side # Implemented in child class square = Square(4) print(square.area()) # Output: 16"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 37,
+            "text": "\ud83d\udd39 Why use abstraction? It enforces consistent implementation across child classes. 7. Magic Methods (Dunder Methods) Magic methods allow objects to behave like built-in types. Example: __str__() and __len__() Have a look at the code below: class Book: def __init__(self, title, pages): self.title = title self.pages = pages def __str__(self): # String representation return f\"Book: {self.title}\" def __len__(self): # Define behavior for len() return self.pages book = Book(\"Python Basics\", 300) print(str(book)) # Output: Book: Python Basics print(len(book)) # Output: 300 8. Class vs. Static Methods Method Type Description Uses self ? Uses cls ? Works with Instance instance \u2705 \u274c Method attributes"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 38,
+            "text": "Method Type Description Uses self ? Uses cls ? Works with class Class Method \u274c \u2705 attributes Does not use Static Method class or instance \u274c \u274c variables Example class Example: class_var = \"I am a class variable\" def instance_method(self): return \"Instance Method\" @classmethod def class_method(cls): return cls.class_var @staticmethod def static_method(): return \"Static Method\" obj = Example() print(obj.instance_method()) # Output: Instance Method print(Example.class_method()) # Output: I am a class variable print(Example.static_method()) # Output: Static Method Summary of OOP Concepts Concept Description Example A blueprint for creating Class class Car: objects"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 39,
+            "text": "Concept Description Example Object An instance of a class car1 = Car() Encapsulation Restrict direct access to data self.__balance A class inherits from another Inheritance class Dog(Animal) class Using the same method in Polymorphism def fly(self) different ways Abstraction Hiding implementation details @abstractmethod Special methods like Magic Methods def __len__(self) __str__() Class Methods Works with class variables @classmethod Independent of class and Static Methods @staticmethod instance List Comprehension List comprehension is a concise and efficient way to create lists in Python. It allows you to generate lists in a single line of code, making your code more readable and Pythonic. 1. Basic Syntax [expression for item in iterable] \u2022 expression \u2192 The operation to perform on each item \u2022 item \u2192 The variable representing each element in the iterable \u2022 iterable \u2192 The data structure being iterated over (list, range, etc.)"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 40,
+            "text": "Example: Creating a list of squares squares = [x**2 for x in range(5)] print(squares) # Output: [0, 1, 4, 9, 16] 2. Using if Condition in List Comprehension Example: Filtering even numbers evens = [x for x in range(10) if x % 2 == 0] print(evens) # Output: [0, 2, 4, 6, 8] 3. Using if-else Condition in List Comprehension Example: Replacing even numbers with \u201cEven\u201d and odd numbers with \u201cOdd\u201d numbers = [\"Even\" if x % 2 == 0 else \"Odd\" for x in range(5)] print(numbers) # Output: ['Even', 'Odd', 'Even', 'Odd', 'Even'] 4. Nested Loops in List Comprehension Example: Creating pairs from two lists pairs = [(x, y) for x in range(2) for y in range(3)] print(pairs) # Output: [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2)]"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 41,
+            "text": "5. List Comprehension with Functions Example: Converting a list of strings to uppercase words = [\"hello\", \"world\", \"python\"] upper_words = [word.upper() for word in words] print(upper_words) # Output: ['HELLO', 'WORLD', 'PYTHON'] 6. List Comprehension with Nested List Comprehension Example: Flattening a 2D list matrix = [[1, 2], [3, 4], [5, 6]] flattened = [num for row in matrix for num in row] print(flattened) # Output: [1, 2, 3, 4, 5, 6] 7. List Comprehension with Set and Dictionary Comprehensions Set Comprehension unique_numbers = {x for x in [1, 2, 2, 3, 4, 4]} print(unique_numbers) # Output: {1, 2, 3, 4} Dictionary Comprehension squared_dict = {x: x**2 for x in range(5)} print(squared_dict) # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 42,
+            "text": "8. When to Use List Comprehensions? \u2022 You need to create a list in a single line \u2022 The logic is simple and readable \u2022 You want to improve performance (faster than loops) Avoid when: - The logic is too complex (use a standard loop instead for clarity) 9. Performance Comparison: List Comprehension vs. Loop import time # Using a for loop start = time.time() squares_loop = [] for x in range(10**6): squares_loop.append(x**2) print(\"Loop time:\", time.time() - start) # Using list comprehension start = time.time() squares_comp = [x**2 for x in range(10**6)] print(\"List Comprehension time:\", time.time() - start) List comprehensions are generally faster than loops because they are optimized internally by Python."
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 43,
+            "text": "Summary Concept Example Basic List Comprehension [x**2 for x in range(5)] [x for x in range(10) if x % 2 == With Condition ( if ) 0] [\"Even\" if x % 2 == 0 else \"Odd\" With if-else for x in range(5)] [(x, y) for x in range(2) for y Nested Loop in range(3)] [num for row in matrix for num in Flatten 2D List row] Set Comprehension {x for x in [1, 2, 2, 3]} Dictionary Comprehension {x: x**2 for x in range(5)} Lambda Functions A lambda function in Python is an anonymous, single-expression function defined using the lambda keyword. It is commonly used for short, throwaway functions where a full function definition is unnecessary. 1. Syntax of Lambda Functions lambda arguments: expression \u2022 lambda \u2192 Keyword to define a lambda function \u2022 arguments \u2192 Input parameters (comma-separated) \u2022 expression \u2192 The operation performed (must be a single expression, not multiple statements)"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 44,
+            "text": "Example: Simple Lambda Function square = lambda x: x ** 2 print(square(5)) # Output: 25 2. Using Lambda Functions with map() , filter() , and reduce() 2.1 Using map() with Lambda Applies a function to each element of an iterable. numbers = [1, 2, 3, 4] squared = list(map(lambda x: x**2, numbers)) print(squared) # Output: [1, 4, 9, 16] 2.2 Using filter() with Lambda Filters elements based on a condition. numbers = [1, 2, 3, 4, 5, 6] evens = list(filter(lambda x: x % 2 == 0, numbers)) print(evens) # Output: [2, 4, 6] 2.3 Using reduce() with Lambda Reduces an iterable to a single value (requires functools.reduce ). from functools import reduce"
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 45,
+            "text": "numbers = [1, 2, 3, 4] product = reduce(lambda x, y: x * y, numbers) print(product) # Output: 24 3. Lambda with Multiple Arguments Example: Adding Two Numbers add = lambda x, y: x + y print(add(3, 7)) # Output: 10 Example: Finding the Maximum of Two Numbers maximum = lambda x, y: x if x > y else y print(maximum(10, 5)) # Output: 10 4. Lambda in Sorting Functions Sorting a List of Tuples students = [(\"Alice\", 85), (\"Bob\", 78), (\"Charlie\", 92)] students.sort(key=lambda student: student[1]) # Sort by score print(students) # Output: [('Bob', 78), ('Alice', 85), ('Charlie', 92)] 5. When to Use Lambda Functions? Use Lambda Functions When: \u2022 The function is short and simple."
+        },
+        {
+            "source": "Python_Refresher_2.pdf",
+            "page_number": 46,
+            "text": "\u2022 Used temporarily inside another function (e.g., map , filter ). \u2022 Avoiding defining a full function with def . Avoid Lambda Functions When: \u2022 The function is complex (use def for readability). \u2022 Multiple operations/statements are needed. Summary Feature Example Basic Lambda Function lambda x: x**2 With map() map(lambda x: x**2, numbers) With filter() filter(lambda x: x % 2 == 0, numbers) With reduce() reduce(lambda x, y: x * y, numbers) Multiple Arguments lambda x, y: x + y Sorting with Lambda sort(key=lambda x: x[1])"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "chunks": [
+        {
+            "source": "basic rules probability.pdf",
+            "page_number": 1,
+            "text": "Basic Rules of Probability 1. Important Definitions In probability, understanding the basic definitions is crucial for grasping more complex concepts. \u2022 Experiment: An action or process that leads to one or more outcomes (e.g., rolling a die). Deterministic experiments have predictable outcomes, while probabilistic or random experiments have uncertain outcomes. \u2022 Outcome: A possible result of an experiment (e.g., rolling a 3 on a die). \u2022 Probability (P): A measure of the likelihood that an event will occur, ranging from 0 (impossible) to 1 (certain). \u2022 P(AUB): The probability of event A or event B occurring. \u2022 P(A\u2229B): The probability of both events A and B occurring. \u2022 Sample Space (S): The set of all possible outcomes of an experiment. \u2022 Event (E): A subset of the sample space. \u2022 Mutually Exclusive Events: Two events that cannot occur at the same time (e.g., rolling a 2 and rolling a 5 on a die). P(A\u2229B)=0 \u2022 Independent Events: Two events where the occurrence of one does not affect the other. P(A\u2229B)=P(A)\u22c5P(B) \u2022 Certain Event: An event that is guaranteed to happen, with a probability of 1. \u2022 Impossible Event: An event that cannot happen, with a probability of 0. \u2022 Exhaustive Events: A set of events that cover the entire sample space, meaning at least one of them must occur."
+        },
+        {
+            "source": "basic rules probability.pdf",
+            "page_number": 2,
+            "text": "Example: Tossing a die: \u2022 Sample space: S = {1, 2, 3, 4, 5, 6} \u2022 Event (E): Rolling an even number = {2, 4, 6} 2. The Complement Rule The complement of an event A is the event that A does not occur. \u2022 Notation: A\u1d9c \u2022 Rule: P(A\u1d9c) = 1 \u2212 P(A) Example: If the probability of rain today is 0.3, the probability it won\u2019t rain is: - P(No Rain) = 1 \u2212 0.3 = 0.7 3. The Addition Rule Used to calculate the probability of the union of two events. For general events: P(A or B) = P(A) + P(B) \u2212 P(A and B) For mutually exclusive events: P(A or B) = P(A) + P(B) Example: \u2022 P(A) = 0.4, P(B) = 0.5, P(A and B) = 0.2 \u2022 P(A or B) = 0.4 + 0.5 \u2212 0.2 = 0.7"
+        },
+        {
+            "source": "basic rules probability.pdf",
+            "page_number": 3,
+            "text": "4. The Multiplication Rule Used to find the probability that two events occur together. For Independent events: P(A and B) = P(A) \u00d7 P(B) Example: A event A is rolling a 3 on a first throw of a die, and event B is rolling an even number on second throw. \u2022 P(A) = 1/6 (rolling a 3) \u2022 P(B) = 3/6 (rolling a 2, 4, or 6) \u2022 P(A and B) = P(A) \u00d7 P(B) = (1/6) \u00d7 (3/6) = 1/12 For Dependent events: P(A and B) = P(A) \u00d7 P(B | A) Example: A bag contains 5 red and 3 blue balls. Two balls are drawn without replacement. Let: \u2022 Event A be drawing a red ball first. \u2022 Event B be drawing a red ball second. \u2022 P(A) = 5/8 (5 red balls out of 8) \u2022 After removing one red ball, there are 4 red left out of 7 total: P(B/A) = 4/7 \u2022 P(A and B) = (5/8) X (4/7)= 20/56 = 5/14 So the probability of drawing two red balls without replacement is 5/14"
+        },
+        {
+            "source": "basic rules probability.pdf",
+            "page_number": 4,
+            "text": "5. Independent vs Dependent Events - More examples \u2022 Independent: The outcome of one event does not affect the other. \u2022 Example: Tossing two coins. \u2022 Dependent: One event affects the probability of the other. \u2022 Example: Drawing two cards without replacement. 6. Mutually Exclusive Events Two events are mutually exclusive if they cannot happen at the same time. Example: \u2022 Event A: Rolling a 2 \u2022 Event B: Rolling a 5 \u2022 These are mutually exclusive because a die can\u2019t show both at once. Summary This lesson covered key probability rules and concepts that are foundational for more advanced topics like distributions and statistical inference. \u2022 Complement Rule: P(A\u1d9c) = 1 \u2212 P(A) \u2022 Addition Rule for unions \u2022 Multiplication Rule for intersections \u2022 Understanding independence and exclusivity"
+        },
+        {
+            "source": "basic rules probability.pdf",
+            "page_number": 5,
+            "text": "Homework / Practice 1. A card is drawn from a standard deck. What is the probability of drawing a red card or a queen? 2. If two dice are rolled, what is the probability that both show even numbers? 3. Think of an example from your daily life where two events are dependent."
+        }
+    ]
+}
